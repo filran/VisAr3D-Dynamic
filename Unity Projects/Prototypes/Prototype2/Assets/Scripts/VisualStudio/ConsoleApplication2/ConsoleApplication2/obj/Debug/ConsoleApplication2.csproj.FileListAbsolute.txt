@@ -1,0 +1,5 @@
+F:\Documentos\Programacao\GitHub\Behaviour4\Unity\Prototypes\Prototype2\Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+F:\Documentos\Programacao\GitHub\Behaviour4\Unity\Prototypes\Prototype2\Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+F:\Documentos\Programacao\GitHub\Behaviour4\Unity\Prototypes\Prototype2\Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
+F:\Documentos\Programacao\GitHub\Behaviour4\Unity\Prototypes\Prototype2\Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+F:\Documentos\Programacao\GitHub\Behaviour4\Unity\Prototypes\Prototype2\Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb

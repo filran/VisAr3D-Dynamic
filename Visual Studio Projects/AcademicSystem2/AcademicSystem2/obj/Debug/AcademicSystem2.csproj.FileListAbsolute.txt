@@ -1,0 +1,6 @@
+F:\Documentos\Programacao\GitHub\Behaviour4\VisualStudio\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.exe.config
+F:\Documentos\Programacao\GitHub\Behaviour4\VisualStudio\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.exe
+F:\Documentos\Programacao\GitHub\Behaviour4\VisualStudio\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.pdb
+F:\Documentos\Programacao\GitHub\Behaviour4\VisualStudio\AcademicSystem2\AcademicSystem2\obj\Debug\AcademicSystem2.csprojResolveAssemblyReference.cache
+F:\Documentos\Programacao\GitHub\Behaviour4\VisualStudio\AcademicSystem2\AcademicSystem2\obj\Debug\AcademicSystem2.exe
+F:\Documentos\Programacao\GitHub\Behaviour4\VisualStudio\AcademicSystem2\AcademicSystem2\obj\Debug\AcademicSystem2.pdb
