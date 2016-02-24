@@ -23,6 +23,7 @@ namespace AcademicSystem2
 
         Start:
             Console.Clear();
+        Start2:
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("MENU");
             Console.WriteLine("[1] Add Course \t\t [2] Add Discipline \t\t\t [3] Add Professor");
@@ -181,7 +182,8 @@ namespace AcademicSystem2
                         }
                     }
 
-                    goto Start;
+                    //goto
+                    goto Start2;
 
                 //case "6":
                 //    goto Start;                
