@@ -11,9 +11,14 @@ namespace AcademicSystem2
         public String name { get; set; }
         public List<Discipline> discipline { get; set;}
 
+        public Discipline disicplines { get; set; }
+
         public Course()
         {
             discipline = new List<Discipline>();
+
+            disicplines = new Discipline();
+
         }
 
     }

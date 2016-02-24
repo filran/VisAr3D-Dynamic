@@ -16,3 +16,9 @@ F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Academic
 F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.exe
 F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.pdb
 F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\obj\Debug\AcademicSystem2.csprojResolveAssemblyReference.cache
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.exe.config
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\obj\Debug\AcademicSystem2.exe
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\obj\Debug\AcademicSystem2.pdb
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.exe
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\bin\Debug\AcademicSystem2.pdb
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\AcademicSystem2\AcademicSystem2\obj\Debug\AcademicSystem2.csprojResolveAssemblyReference.cache
