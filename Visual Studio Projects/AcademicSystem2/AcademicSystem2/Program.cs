@@ -26,7 +26,7 @@ namespace AcademicSystem2
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("MENU");
             Console.WriteLine("[1] Add Course \t\t [2] Add Discipline \t\t\t [3] Add Professor");
-            Console.WriteLine("[4] Add Sutdent \t [5] Add Professor to Discipline \t [6] Add Student to discipline");
+            Console.WriteLine("[4] Add Sutdent \t [5] List");
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
 
             string cmd;
@@ -87,17 +87,35 @@ namespace AcademicSystem2
                     Console.Write("RG: ");    prof.rg = Console.ReadLine();
                     Console.Write("CPF: ");    prof.cpf = Console.ReadLine();
 
-                    Console.Write("Professors List:");
-                    Dictionary<int, Professor> dic_prof = new Dictionary<int, Professor>();
+                    Console.WriteLine("Disciplines List:");
+                    Dictionary<int, Discipline> dic_discipline = new Dictionary<int, Discipline>();
                     int j = 0;
-                    foreach(Professor p in system.professors)
+                    Console.WriteLine("[0]\tExit List");
+                    foreach(Discipline d in system.disciplines)
                     {
                         ++j;
-                        Console.WriteLine("["+j+"]\t"+p.name);
-                        dic_prof.Add(j, p);
+                        Console.WriteLine("[" + j + "]\t" + d.name);
+                        dic_discipline.Add(j, d);
                     }
-                    Console.WriteLine("Choose one discipline ");
 
+                DiscChoose:
+                    Console.Write("Choose a discipline: ");
+                    int disc_choose = Int32.Parse(Console.ReadLine());
+
+                    foreach (KeyValuePair<int,Discipline> d in dic_discipline)
+                    {
+                        if (disc_choose == d.Key)
+                        {
+                            foreach(Discipline dd in system.disciplines )
+                            {
+                                if(d.Value == dd)
+                                {
+                                    dd.professor.Add(prof);
+                                    goto DiscChoose;
+                                }
+                            }
+                        }
+                    }
                     system.professors.Add(prof);
                     goto Start;
 
@@ -109,15 +127,64 @@ namespace AcademicSystem2
                     Console.Write("Address: ");    student.address = Console.ReadLine();
                     Console.Write("RG: ");    student.rg = Console.ReadLine();
                     Console.Write("CPF: ");    student.cpf = Console.ReadLine();
+
+                    Console.WriteLine("Disciplines List:");
+                    Dictionary<int, Discipline> dic_discipline2 = new Dictionary<int, Discipline>();
+                    int k = 0;
+                    Console.WriteLine("[0]\tExit List");
+                    foreach(Discipline d in system.disciplines)
+                    {
+                        ++k;
+                        Console.WriteLine("[" + k + "]\t" + d.name);
+                        dic_discipline2.Add(k, d);
+                    }
+
+                DiscChoose2:
+                    Console.Write("Choose a discipline: ");
+                    int disc_choose2 = Int32.Parse(Console.ReadLine());
+
+                    foreach (KeyValuePair<int, Discipline> d in dic_discipline2)
+                    {
+                        if (disc_choose2 == d.Key)
+                        {
+                            foreach(Discipline dd in system.disciplines )
+                            {
+                                if(d.Value == dd)
+                                {
+                                    dd.students.Add(student);
+                                    goto DiscChoose2;
+                                }
+                            }
+                        }
+                    }
                     system.students.Add(student);
                     goto Start;
 
                 case "5":
-                    Console.WriteLine("ADD PROFESSOR TO DISCIPLINE");
+                    Console.WriteLine("LIST");
+                    foreach(Course c in system.course)
+                    {
+                        Console.WriteLine("Course: "+c.name);
+                        foreach(Discipline d in c.discipline)
+                        {
+                            Console.WriteLine("\tDiscipline: "+ d.name);
+                            foreach(Professor p in d.professor)
+                            {
+                                Console.WriteLine("\t\tProfessor: "+p.name);
+                            }
+
+                            Console.WriteLine("\t\tStudents:");
+                            foreach(Student s in d.students)
+                            {
+                                Console.WriteLine("\t\t\t"+s.name);
+                            }
+                        }
+                    }
+
                     goto Start;
 
-                case "6":
-                    goto Start;                
+                //case "6":
+                //    goto Start;                
 
                 default:
                     break;
