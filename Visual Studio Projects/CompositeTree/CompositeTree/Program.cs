@@ -10,6 +10,11 @@ namespace CompositeTree
     {
         static void Main(string[] args)
         {
+            Root r1 = new Root();
+            r1.name = "R1";
+
+            Root r11 = new Root();
+            r11.name = "R11";
         }
     }
 }

@@ -9,13 +9,8 @@ namespace CompositeTree
 {
     public class Root : Tree
     {
-        ArrayList nodes = new ArrayList();
+        private ArrayList nodes = new ArrayList();
 
-        public Root(String s)
-        {
-            this.name = s;
-        }
-        
         public void add(Tree t)
         {
             nodes.Add(t);
@@ -26,5 +21,15 @@ namespace CompositeTree
             nodes.Remove(t);
         }
 
+        public void print()
+        {
+            IEnumerator root = nodes.GetEnumerator();
+
+            while(root.MoveNext())
+            {
+                Root r = (Root)root.Current;
+                Console.WriteLine(r.name);
+            }
+        }
     }
 }

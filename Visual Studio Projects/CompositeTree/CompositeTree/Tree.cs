@@ -8,12 +8,18 @@ namespace CompositeTree
 {
     public abstract class Tree
     {
-        protected String name {get;set;}
+        public String name {get;set;}
 
-        protected abstract void add(Tree t);
+        public void add(Tree t)
+        {
+            throw new NotImplementedException();
+        }
 
-        protected abstract void remove(Tree t);
+        public void remove(Tree t)
+        {
+            throw new NotImplementedException();
+        }
 
-        protected abstract Tree getChild(Tree t);
+        //protected abstract Tree getChild(Tree t);
     }
 }
