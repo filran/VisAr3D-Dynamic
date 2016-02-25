@@ -1,0 +1,2 @@
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositeTree\CompositeTree\bin\Debug\CompositeTree.exe.config
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositeTree\CompositeTree\obj\Debug\CompositeTree.csprojResolveAssemblyReference.cache

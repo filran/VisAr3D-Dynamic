@@ -1,0 +1,6 @@
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\MenuComponent\MenuComponent\bin\Debug\MenuComponent.exe.config
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\MenuComponent\MenuComponent\obj\Debug\MenuComponent.csprojResolveAssemblyReference.cache
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\MenuComponent\MenuComponent\bin\Debug\MenuComponent.exe
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\MenuComponent\MenuComponent\bin\Debug\MenuComponent.pdb
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\MenuComponent\MenuComponent\obj\Debug\MenuComponent.exe
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\MenuComponent\MenuComponent\obj\Debug\MenuComponent.pdb
