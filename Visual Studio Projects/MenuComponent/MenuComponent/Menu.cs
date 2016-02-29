@@ -19,42 +19,43 @@ namespace MenuComponent
             this.description = description;
         }
 
-        public void add(MenuComponent menuComponent)
+        new public void add(MenuComponent menuComponent)
         {
             menuComponent.add(menuComponent);
         }
 
-        public void remove(MenuComponent menuComponent)
+        new public void remove(MenuComponent menuComponent)
         {
             menuComponent.remove(menuComponent);
         }
 
-        public MenuComponent getChild(int i)
-        {
-            return (MenuComponent)menuComponents[i];
-        }
+        //public MenuComponent getChild(int i)
+        //{
+        //    return (MenuComponent)menuComponents[i];
+        //}
 
-        public String getName()
+        new public String getName()
         {
             return name;
         }
 
-        public String getDescription()
+        new public String getDescription()
         {
             return description;
         }
 
-        public void print()
+        new public void print()
         {
             Console.WriteLine("\n" + getName());
             Console.WriteLine(",     "+getDescription());
             Console.WriteLine("-------------------------");
 
-            IEnumerator iterator = menuComponents.GetEnumerator();
-            while(iterator.MoveNext())
+            while(menuComponents.Count > 0)
             {
-                MenuComponent menuComponent = (MenuComponent)iterator;
-                menuComponent.print();
+                foreach(MenuComponent m in menuComponents)
+                {
+                    m.print();
+                }
             }
         }
     }

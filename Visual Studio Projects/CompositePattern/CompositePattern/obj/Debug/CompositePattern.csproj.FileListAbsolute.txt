@@ -4,3 +4,6 @@ C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Compos
 C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositePattern\CompositePattern\obj\Debug\CompositePattern.csprojResolveAssemblyReference.cache
 C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositePattern\CompositePattern\obj\Debug\CompositePattern.exe
 C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositePattern\CompositePattern\obj\Debug\CompositePattern.pdb
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositePattern\CompositePattern\bin\Debug\CompositePattern.exe.config
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositePattern\CompositePattern\obj\Debug\CompositePattern.exe
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\CompositePattern\CompositePattern\obj\Debug\CompositePattern.pdb

@@ -1,0 +1,12 @@
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\bin\Debug\Composite.exe.config
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\bin\Debug\Composite.exe
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\bin\Debug\Composite.pdb
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\obj\Debug\Composite.exe
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\obj\Debug\Composite.pdb
+F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\obj\Debug\Composite.csprojResolveAssemblyReference.cache
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\bin\Debug\Composite.exe.config
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\bin\Debug\Composite.exe
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\bin\Debug\Composite.pdb
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\obj\Debug\Composite.csprojResolveAssemblyReference.cache
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\obj\Debug\Composite.exe
+C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\obj\Debug\Composite.pdb
