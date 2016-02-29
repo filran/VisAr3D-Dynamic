@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" name="Composite" visibility="public">
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_B73C1711_2DBC_4539_86C3_ECE054DCD94E" name="Program" visibility="public">
+				<ownedOperation xmi:id="EAID_40A29174_03E8_46a3_BBC8_CACB9AA4D8ED" name="Main" visibility="private" concurrency="sequential" isStatic="true">
+					<ownedParameter xmi:id="EAID_7134287F_7F93_4b37_B1E8_8C986D418883" name="args" direction="in" isStream="false" isException="false" isOrdered="false" isUnique="true" type="EAC__string__"/>
+					<ownedParameter xmi:id="EAID_RT000000_03E8_46a3_BBC8_CACB9AA4D8ED" name="return" direction="return" type="EAC__void"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB" name="Supervisor" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_89AC4DDE_60BE_44fd_A547_E90228C26DCC" name="happiness" visibility="private" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001_60BE_44fd_A547_E90228C26DCC" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000002_60BE_44fd_A547_E90228C26DCC" value="1"/>
+					<type xmi:idref="EAC__int"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_337121D0_53F4_4007_89A0_953144E73E5C" name="name" visibility="private" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003_53F4_4007_89A0_953144E73E5C" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000004_53F4_4007_89A0_953144E73E5C" value="1"/>
+					<type xmi:idref="EAC__string"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_051C9DEF_480E_4afd_A0C1_AF0C2AFC0BDE" name="subordinate" visibility="private" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005_480E_4afd_A0C1_AF0C2AFC0BDE" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000006_480E_4afd_A0C1_AF0C2AFC0BDE" value="1"/>
+					<defaultValue xmi:type="uml:LiteralString" xmi:id="EAID_LI000007_480E_4afd_A0C1_AF0C2AFC0BDE" value="new List&lt;IEmployee&gt;()"/>
+					<type xmi:idref="EAC__List_IEmployee_"/>
+				</ownedAttribute>
+				<ownedOperation xmi:id="EAID_BABC89F6_AA6E_4c95_A8AB_C606BE1F0955" name="AddSubordinate" visibility="public" concurrency="sequential">
+					<ownedParameter xmi:id="EAID_917DC591_44C4_4f9f_A9E3_F4EA6707168C" name="employee" type="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB" direction="in" isStream="false" isException="false" isOrdered="false" isUnique="true"/>
+					<ownedParameter xmi:id="EAID_RT000000_AA6E_4c95_A8AB_C606BE1F0955" name="return" direction="return" type="EAC__void"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="EAID_A1E75B86_94DA_4b3f_9820_85AF56FDA32F" name="ShowHappiness" visibility="private" concurrency="sequential">
+					<ownedParameter xmi:id="EAID_RT000000_94DA_4b3f_9820_85AF56FDA32F" name="return" direction="return" type="EAC__void"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="EAID_C38DAA72_27D5_480e_8DBE_959AD742373C" name="Supervisor" visibility="public" concurrency="sequential">
+					<ownedParameter xmi:id="EAID_8EFC80C5_9E27_4f60_A17D_015E073F557C" name="name" direction="in" isStream="false" isException="false" isOrdered="false" isUnique="true" type="EAC__string"/>
+					<ownedParameter xmi:id="EAID_28EC6431_6518_4c1c_80E1_C4774FE3C669" name="happiness" direction="in" isStream="false" isException="false" isOrdered="false" isUnique="true" type="EAC__int"/>
+				</ownedOperation>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst8D6292_7FED_413c_9DFF_1EA0A87D6236" name="subordinate" visibility="private" association="EAID_D18D6292_7FED_413c_9DFF_1EA0A87D6236" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007__7FED_413c_9DFF_1EA0A87D6236" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000008__7FED_413c_9DFF_1EA0A87D6236" value="-1"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_38005B4D_40E7_49e8_8D87_454ECE5D351D" visibility="public" supplier="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB" client="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_D18D6292_7FED_413c_9DFF_1EA0A87D6236" visibility="public">
+				<memberEnd xmi:idref="EAID_dst8D6292_7FED_413c_9DFF_1EA0A87D6236"/>
+				<memberEnd xmi:idref="EAID_src8D6292_7FED_413c_9DFF_1EA0A87D6236"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src8D6292_7FED_413c_9DFF_1EA0A87D6236" visibility="public" association="EAID_D18D6292_7FED_413c_9DFF_1EA0A87D6236" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_6F507F3F_7541_4ed5_9826_B976D8B632E5" name="Worker" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_89638C38_D3D5_41ab_A2EE_233DCA571CCA" name="happiness" visibility="private" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009_D3D5_41ab_A2EE_233DCA571CCA" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000010_D3D5_41ab_A2EE_233DCA571CCA" value="1"/>
+					<type xmi:idref="EAC__int"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1FB5C45E_7807_47b7_BF0F_D54403E4BDA1" name="name" visibility="private" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000011_7807_47b7_BF0F_D54403E4BDA1" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000012_7807_47b7_BF0F_D54403E4BDA1" value="1"/>
+					<type xmi:idref="EAC__string"/>
+				</ownedAttribute>
+				<ownedOperation xmi:id="EAID_FFF07217_939B_417b_8C5A_EE4D8FB41905" name="ShowHappiness" visibility="private" concurrency="sequential">
+					<ownedParameter xmi:id="EAID_RT000000_939B_417b_8C5A_EE4D8FB41905" name="return" direction="return" type="EAC__void"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="EAID_8CADB2E2_1520_494d_B4FB_37203B7180E1" name="Worker" visibility="public" concurrency="sequential">
+					<ownedParameter xmi:id="EAID_9D06720F_FE07_43e4_AE19_2BF349CDE5CC" name="name" direction="in" isStream="false" isException="false" isOrdered="false" isUnique="true" type="EAC__string"/>
+					<ownedParameter xmi:id="EAID_9F1D5B21_2639_45c6_8EC3_CB03313C13FB" name="happiness" direction="in" isStream="false" isException="false" isOrdered="false" isUnique="true" type="EAC__int"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_708B04A7_4B7F_41a9_B379_B29211C251BF" visibility="public" supplier="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB" client="EAID_6F507F3F_7541_4ed5_9826_B976D8B632E5"/>
+			<packagedElement xmi:type="uml:Interface" xmi:id="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB" name="IEmployee" visibility="public" isAbstract="true">
+				<ownedOperation xmi:id="EAID_47FCA59B_C783_4581_9B6D_4A6BAFF25427" name="ShowHappiness" visibility="public" concurrency="sequential">
+					<ownedParameter xmi:id="EAID_RT000000_C783_4581_9B6D_4A6BAFF25427" name="return" direction="return" type="EAC__void"/>
+				</ownedOperation>
+			</packagedElement>
+		</packagedElement>
+		<thecustomprofile:ImplementsExplicit base_Operation="EAID_A1E75B86_94DA_4b3f_9820_85AF56FDA32F" ImplementsExplicit="true"/>
+		<thecustomprofile:Implements base_Operation="EAID_A1E75B86_94DA_4b3f_9820_85AF56FDA32F" Implements="IEmployee.ShowHappiness"/>
+		<thecustomprofile:ImplementsExplicit base_Operation="EAID_FFF07217_939B_417b_8C5A_EE4D8FB41905" ImplementsExplicit="true"/>
+		<thecustomprofile:Implements base_Operation="EAID_FFF07217_939B_417b_8C5A_EE4D8FB41905" Implements="IEmployee.ShowHappiness"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" xmi:type="uml:Package" name="Composite" scope="public">
+				<model package2="EAID_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" package="EAPK_D1AE401F_CF1D_4a54_B0F7_D2EF72C279B7" tpos="0" ea_localid="3" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-02-29 12:59:46" modified="2016-02-29 12:59:46" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Dynamic View"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2016-02-29 12:59:46" modified="2016-02-29 12:59:46"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_B73C1711_2DBC_4539_86C3_ECE054DCD94E" xmi:type="uml:Class" name="Program" scope="public">
+				<model package="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" tpos="0" ea_localid="4" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-02-29 12:59:46" modified="2016-02-29 12:59:46" complexity="1" status="Proposed"/>
+				<code gentype="C#" genfile="C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\Program.cs"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Composite" eventflags="OBJ=811f;"/>
+				<operations>
+					<operation xmi:idref="EAID_40A29174_03E8_46a3_BBC8_CACB9AA4D8ED" name="Main" scope="Private">
+						<properties position="0"/>
+						<stereotype/>
+						<model ea_guid="{40A29174-03E8-46a3-BBC8-CACB9AA4D8ED}" ea_localid="2"/>
+						<type type="void" const="false" static="true" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_03E8_46a3_BBC8_CACB9AA4D8ED" visibility="public">
+								<properties pos="0" type="void" const="false" ea_guid="{RETURNID-03E8-46a3-BBC8-CACB9AA4D8ED}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+							<parameter xmi:idref="EAID_7134287F_7F93_4b37_B1E8_8C986D418883" visibility="public">
+								<properties pos="0" type="string[]" const="false" ea_guid="{7134287F-7F93-4b37-B1E8-8C986D418883}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+						<xrefs/>
+					</operation>
+				</operations>
+			</element>
+			<element xmi:idref="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB" xmi:type="uml:Class" name="Supervisor" scope="public">
+				<model package="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" tpos="0" ea_localid="5" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-02-29 12:59:46" modified="2016-02-29 12:59:46" complexity="1" status="Proposed"/>
+				<code gentype="C#" genfile="C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\Supervisor.cs"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Composite" eventflags="OBJ=811f;"/>
+				<attributes>
+					<attribute xmi:idref="EAID_89AC4DDE_60BE_44fd_A547_E90228C26DCC" name="happiness" scope="Private">
+						<initial/>
+						<documentation/>
+						<model ea_localid="1" ea_guid="{89AC4DDE-60BE-44fd-A547-E90228C26DCC}"/>
+						<properties type="int" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_337121D0_53F4_4007_89A0_953144E73E5C" name="name" scope="Private">
+						<initial/>
+						<documentation/>
+						<model ea_localid="2" ea_guid="{337121D0-53F4-4007-89A0-953144E73E5C}"/>
+						<properties type="string" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_051C9DEF_480E_4afd_A0C1_AF0C2AFC0BDE" name="subordinate" scope="Private">
+						<initial body="new List&lt;IEmployee&gt;()"/>
+						<documentation/>
+						<model ea_localid="3" ea_guid="{051C9DEF-480E-4afd-A0C1-AF0C2AFC0BDE}"/>
+						<properties type="List&lt;IEmployee&gt;" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<operations>
+					<operation xmi:idref="EAID_BABC89F6_AA6E_4c95_A8AB_C606BE1F0955" name="AddSubordinate" scope="Public">
+						<properties position="2"/>
+						<stereotype/>
+						<model ea_guid="{BABC89F6-AA6E-4c95-A8AB-C606BE1F0955}" ea_localid="3"/>
+						<type type="void" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_AA6E_4c95_A8AB_C606BE1F0955" visibility="public">
+								<properties pos="0" type="void" const="false" ea_guid="{RETURNID-AA6E-4c95-A8AB-C606BE1F0955}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+							<parameter xmi:idref="EAID_917DC591_44C4_4f9f_A9E3_F4EA6707168C" visibility="public">
+								<properties pos="0" type="IEmployee" const="false" classifier="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB" ea_guid="{917DC591-44C4-4f9f-A9E3-F4EA6707168C}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+						<xrefs/>
+					</operation>
+					<operation xmi:idref="EAID_A1E75B86_94DA_4b3f_9820_85AF56FDA32F" name="ShowHappiness" scope="Private">
+						<properties position="1"/>
+						<stereotype/>
+						<model ea_guid="{A1E75B86-94DA-4b3f-9820-85AF56FDA32F}" ea_localid="4"/>
+						<type type="void" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags>
+							<tag xmi:id="EAID_56834934_6F86_4ea4_8959_2922239D32BD" name="Implements" value="IEmployee.ShowHappiness" notes="Qualified name for the interface operation"/>
+							<tag xmi:id="EAID_E3AA4A95_E8FC_4558_B264_16ECA68464B9" name="ImplementsExplicit" value="true"/>
+						</tags>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_94DA_4b3f_9820_85AF56FDA32F" visibility="public">
+								<properties pos="0" type="void" const="false" ea_guid="{RETURNID-94DA-4b3f-9820-85AF56FDA32F}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+						<xrefs/>
+					</operation>
+					<operation xmi:idref="EAID_C38DAA72_27D5_480e_8DBE_959AD742373C" name="Supervisor" scope="Public">
+						<properties position="0"/>
+						<stereotype/>
+						<model ea_guid="{C38DAA72-27D5-480e-8DBE-959AD742373C}" ea_localid="5"/>
+						<type const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_27D5_480e_8DBE_959AD742373C" visibility="public">
+								<properties pos="0" const="false" ea_guid="{RETURNID-27D5-480e-8DBE-959AD742373C}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+							<parameter xmi:idref="EAID_8EFC80C5_9E27_4f60_A17D_015E073F557C" visibility="public">
+								<properties pos="0" type="string" const="false" ea_guid="{8EFC80C5-9E27-4f60-A17D-015E073F557C}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+							<parameter xmi:idref="EAID_28EC6431_6518_4c1c_80E1_C4774FE3C669" visibility="public">
+								<properties pos="1" type="int" const="false" ea_guid="{28EC6431-6518-4c1c-80E1-C4774FE3C669}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+						<xrefs/>
+					</operation>
+				</operations>
+				<links>
+					<Realisation xmi:id="EAID_38005B4D_40E7_49e8_8D87_454ECE5D351D" start="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB" end="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB"/>
+					<Association xmi:id="EAID_D18D6292_7FED_413c_9DFF_1EA0A87D6236" start="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB" end="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_6F507F3F_7541_4ed5_9826_B976D8B632E5" xmi:type="uml:Class" name="Worker" scope="public">
+				<model package="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" tpos="0" ea_localid="6" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-02-29 12:59:46" modified="2016-02-29 12:59:46" complexity="1" status="Proposed"/>
+				<code gentype="C#" genfile="C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\Worker.cs"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Composite" eventflags="OBJ=811f;"/>
+				<attributes>
+					<attribute xmi:idref="EAID_89638C38_D3D5_41ab_A2EE_233DCA571CCA" name="happiness" scope="Private">
+						<initial/>
+						<documentation/>
+						<model ea_localid="4" ea_guid="{89638C38-D3D5-41ab-A2EE-233DCA571CCA}"/>
+						<properties type="int" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_1FB5C45E_7807_47b7_BF0F_D54403E4BDA1" name="name" scope="Private">
+						<initial/>
+						<documentation/>
+						<model ea_localid="5" ea_guid="{1FB5C45E-7807-47b7-BF0F-D54403E4BDA1}"/>
+						<properties type="string" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<operations>
+					<operation xmi:idref="EAID_FFF07217_939B_417b_8C5A_EE4D8FB41905" name="ShowHappiness" scope="Private">
+						<properties position="1"/>
+						<stereotype/>
+						<model ea_guid="{FFF07217-939B-417b-8C5A-EE4D8FB41905}" ea_localid="6"/>
+						<type type="void" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags>
+							<tag xmi:id="EAID_6606B4A0_A156_44b7_8AE3_46A703F731F4" name="Implements" value="IEmployee.ShowHappiness" notes="Qualified name for the interface operation"/>
+							<tag xmi:id="EAID_D0CD7562_314A_479f_B154_61DA70FB9B65" name="ImplementsExplicit" value="true"/>
+						</tags>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_939B_417b_8C5A_EE4D8FB41905" visibility="public">
+								<properties pos="0" type="void" const="false" ea_guid="{RETURNID-939B-417b-8C5A-EE4D8FB41905}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+						<xrefs/>
+					</operation>
+					<operation xmi:idref="EAID_8CADB2E2_1520_494d_B4FB_37203B7180E1" name="Worker" scope="Public">
+						<properties position="0"/>
+						<stereotype/>
+						<model ea_guid="{8CADB2E2-1520-494d-B4FB-37203B7180E1}" ea_localid="7"/>
+						<type const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_1520_494d_B4FB_37203B7180E1" visibility="public">
+								<properties pos="0" const="false" ea_guid="{RETURNID-1520-494d-B4FB-37203B7180E1}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+							<parameter xmi:idref="EAID_9D06720F_FE07_43e4_AE19_2BF349CDE5CC" visibility="public">
+								<properties pos="0" type="string" const="false" ea_guid="{9D06720F-FE07-43e4-AE19-2BF349CDE5CC}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+							<parameter xmi:idref="EAID_9F1D5B21_2639_45c6_8EC3_CB03313C13FB" visibility="public">
+								<properties pos="1" type="int" const="false" ea_guid="{9F1D5B21-2639-45c6-8EC3-CB03313C13FB}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+						<xrefs/>
+					</operation>
+				</operations>
+				<links>
+					<Realisation xmi:id="EAID_708B04A7_4B7F_41a9_B379_B29211C251BF" start="EAID_6F507F3F_7541_4ed5_9826_B976D8B632E5" end="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB" xmi:type="uml:Interface" name="IEmployee" scope="public">
+				<model package="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" tpos="0" ea_localid="3" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Interface" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-02-29 12:59:46" modified="2016-02-29 12:59:46" complexity="1" status="Proposed"/>
+				<code gentype="C#" genfile="C:\Users\hercules\Documents\GitHub\VisAr3D-Dynamic\Visual Studio Projects\Composite\Composite\IEmployee.cs"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Composite" eventflags="OBJ=811f;" ea_oprparamsclassified="{917DC591-44C4-4f9f-A9E3-F4EA6707168C}"/>
+				<operations>
+					<operation xmi:idref="EAID_47FCA59B_C783_4581_9B6D_4A6BAFF25427" name="ShowHappiness" scope="Public">
+						<properties position="0"/>
+						<stereotype/>
+						<model ea_guid="{47FCA59B-C783-4581-9B6D-4A6BAFF25427}" ea_localid="1"/>
+						<type type="void" const="false" static="false" isAbstract="false" synchronised="0" concurrency="Sequential" returnarray="0" pure="0" isQuery="false"/>
+						<behaviour/>
+						<code/>
+						<style/>
+						<styleex/>
+						<documentation/>
+						<tags/>
+						<parameters>
+							<parameter xmi:idref="EAID_RETURNID_C783_4581_9B6D_4A6BAFF25427" visibility="public">
+								<properties pos="0" type="void" const="false" ea_guid="{RETURNID-C783-4581-9B6D-4A6BAFF25427}"/>
+								<style/>
+								<styleex/>
+								<documentation/>
+								<tags/>
+								<xrefs/>
+							</parameter>
+						</parameters>
+						<xrefs/>
+					</operation>
+				</operations>
+				<links>
+					<Realisation xmi:id="EAID_38005B4D_40E7_49e8_8D87_454ECE5D351D" start="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB" end="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB"/>
+					<Realisation xmi:id="EAID_708B04A7_4B7F_41a9_B379_B29211C251BF" start="EAID_6F507F3F_7541_4ed5_9826_B976D8B632E5" end="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB"/>
+					<Association xmi:id="EAID_D18D6292_7FED_413c_9DFF_1EA0A87D6236" start="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB" end="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_38005B4D_40E7_49e8_8D87_454ECE5D351D">
+				<source xmi:idref="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB">
+					<model ea_localid="5" type="Class" name="Supervisor"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB">
+					<model ea_localid="3" type="Interface" name="IEmployee"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="2"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_D18D6292_7FED_413c_9DFF_1EA0A87D6236">
+				<source xmi:idref="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB">
+					<model ea_localid="5" type="Class" name="Supervisor"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB">
+					<model ea_localid="3" type="Interface" name="IEmployee"/>
+					<role name="subordinate" visibility="Private" targetScope="instance"/>
+					<type multiplicity="0..*" aggregation="none" type="List&lt;IEmployee&gt;" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="1"/>
+				<properties ea_type="Association" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels rb="0..*" rt="-subordinate"/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_708B04A7_4B7F_41a9_B379_B29211C251BF">
+				<source xmi:idref="EAID_6F507F3F_7541_4ed5_9826_B976D8B632E5">
+					<model ea_localid="6" type="Class" name="Worker"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB">
+					<model ea_localid="3" type="Interface" name="IEmployee"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAC_TypesPackage" name="EA_C#_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAC__string__" name="string[]" visibility="public"/>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAC__void" name="void" visibility="public"/>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAC__int" name="int" visibility="public">
+						<generalization xmi:type="uml:Generalization" xmi:id="EAC__int_General">
+							<general href="http://schema.omg.org/spec/UML/2.1/uml.xml#Integer"/>
+						</generalization>
+					</packagedElement>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAC__string" name="string" visibility="public">
+						<generalization xmi:type="uml:Generalization" xmi:id="EAC__string_General">
+							<general href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
+						</generalization>
+					</packagedElement>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAC__List_IEmployee_" name="List&lt;IEmployee&gt;" visibility="public"/>
+				</packagedElement>
+			</packagedElement>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:id="thecustomprofile" nsPrefix="thecustomprofile" name="thecustomprofile" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="thecustomprofile">
+					<body> Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ImplementsExplicit" name="ImplementsExplicit">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ImplementsExplicit-base_Operation" name="base_Operation" association="Operation_ImplementsExplicit">
+						<type href="http://schema.omg.org/spec/UML/2.1/Operation"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ImplementsExplicit-ImplementsExplicit" name="ImplementsExplicit">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Operation_ImplementsExplicit" name="A_Operation_ImplementsExplicit" memberEnd="extension_ImplementsExplicit ImplementsExplicit-base_Operation">
+					<ownedEnd xmi:id="extension_ImplementsExplicit" name="extension_ImplementsExplicit" type="ImplementsExplicit" isComposite="true" lower="0" upper="1" memberEnd="extension_ImplementsExplicit ImplementsExplicit-base_Operation"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Implements" name="Implements">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Implements-base_Operation" name="base_Operation" association="Operation_Implements">
+						<type href="http://schema.omg.org/spec/UML/2.1/Operation"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Implements-Implements" name="Implements">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Operation_Implements" name="A_Operation_Implements" memberEnd="extension_Implements Implements-base_Operation">
+					<ownedEnd xmi:id="extension_Implements" name="extension_Implements" type="Implements" isComposite="true" lower="0" upper="1" memberEnd="extension_Implements Implements-base_Operation"/>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_D0D1DFED_3338_40f8_9CFD_B84C1B70CC73">
+				<model package="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022" localID="2" owner="EAPK_25CAC964_BC0D_48e2_A1CA_59A0F57EA022"/>
+				<properties name="Composite" type="Logical"/>
+				<project author="hercules" version="1.0" created="2016-02-29 12:59:46" modified="2016-02-29 13:01:23"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=A07503DC;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;hl=1;cls=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=416;Top=217;Right=549;Bottom=313;" subject="EAID_6F507F3F_7541_4ed5_9826_B976D8B632E5" seqno="1" style="DUID=848D981A;"/>
+					<element geometry="Left=100;Top=378;Right=366;Bottom=500;" subject="EAID_2635B5BA_7789_4dd0_91CB_FDCBF99106FB" seqno="2" style="DUID=2BCDB97B;"/>
+					<element geometry="Left=474;Top=53;Right=588;Bottom=123;" subject="EAID_B73C1711_2DBC_4539_86C3_ECE054DCD94E" seqno="3" style="DUID=8640A331;"/>
+					<element geometry="Left=187;Top=62;Right=320;Bottom=152;" subject="EAID_7F697840_08D2_4c1b_9DA3_A24244158DBB" seqno="4" style="DUID=B379E625;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_708B04A7_4B7F_41a9_B379_B29211C251BF" style="Mode=3;EOID=B379E625;SOID=848D981A;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=140:-220$;" subject="EAID_38005B4D_40E7_49e8_8D87_454ECE5D351D" style="Mode=3;EOID=B379E625;SOID=2BCDB97B;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=117;SY=-30;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=58:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=277:-250$;" subject="EAID_D18D6292_7FED_413c_9DFF_1EA0A87D6236" style="Mode=3;EOID=B379E625;SOID=2BCDB97B;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>
