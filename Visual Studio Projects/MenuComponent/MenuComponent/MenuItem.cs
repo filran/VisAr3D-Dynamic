@@ -21,27 +21,27 @@ namespace MenuComponent
             this.price = price;
         }
 
-        public String getName()
+        new public String getName()
         {
             return name;
         }
 
-        public String getDescription()
+        new public String getDescription()
         {
             return description;
         }
 
-        public double getPrice()
+        new public double getPrice()
         {
             return price;
         }
 
-        public bool isVegeterian()
+        new public bool isVegeterian()
         {
             return vegetarian;
         }
 
-        public void print()
+        new public void print()
         {
             Console.WriteLine("   " + getName());
             if(isVegeterian())
