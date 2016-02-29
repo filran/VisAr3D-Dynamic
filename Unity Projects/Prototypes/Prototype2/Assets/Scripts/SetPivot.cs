@@ -41,7 +41,7 @@ public class SetPivot : EditorWindow {
 	void OnGUI() {
 		if(obj) {
 			if(mesh) {
-				p.x = EditorGUILayout.Slider("X", p.x, -1.0f, 1.0f);
+				p.x = EditorGUILayout.Slider("X", p.x, -1.0f, -1.0f);
 				p.y = EditorGUILayout.Slider("Y", p.y, -1.0f, 1.0f);
 				p.z = EditorGUILayout.Slider("Z", p.z, -1.0f, 1.0f);
 				if(p != last_p) { //Detects user input on any of the three sliders

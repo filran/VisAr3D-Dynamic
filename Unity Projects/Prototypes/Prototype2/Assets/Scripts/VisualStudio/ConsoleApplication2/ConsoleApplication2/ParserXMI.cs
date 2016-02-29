@@ -17,7 +17,7 @@ using System.Xml;
 
         private String url { get; set; }
         private XmlDocument parserxmi { get; set; }
-        public Diagram Diagram { get; set; }
+        //public Diagram Diagram { get; set; }
         public ArrayList Messages { get; set; }
         public ArrayList Lifelines { get; set; }
         public List<Sequence> SequenceDiagrams { get; set; }
@@ -26,7 +26,7 @@ using System.Xml;
             this.url = url;
             this.parserxmi = new XmlDocument();
             this.parserxmi.Load(this.url);
-            this.Diagram = new Diagram();
+            //this.Diagram = new Diagram();
             this.SequenceDiagrams = new List<Sequence>();            
             this.Messages = new ArrayList();
             this.Lifelines = new ArrayList();
@@ -43,6 +43,9 @@ using System.Xml;
                 }
             }   
 
+            //DIAGRAMS
+
+
 
             //TEST OPERATORS
             //foreach (InteractionOperator i in this.Diagram.InteractionOperator)
@@ -51,22 +54,22 @@ using System.Xml;
             //}
 
             //TEST SEQUENCE DIAGRAMS
-            foreach (Sequence s in this.SequenceDiagrams)
-            {
-                Console.WriteLine(s.Name +" - "+s.Id);
+            //foreach (Sequence s in this.SequenceDiagrams)
+            //{
+            //    Console.WriteLine(s.Name +" - "+s.Id);
 
-                foreach (Lifeline l in s.Lifelines)
-                {
-                    Console.WriteLine(l.Seqno + " " +l.Name + "\tid:" + l.Id + "\tVisibility:" + l.Visibility + "\tRepresents:" + l.Represents + "\tLeft:" + l.Left + "\tRight:" + l.Right + "\tTop:" + l.Top + "\tBottom:" + l.Bottom);
+            //    foreach (Lifeline l in s.Lifelines)
+            //    {
+            //        Console.WriteLine(l.Seqno + " " +l.Name + "\tid:" + l.Id + "\tVisibility:" + l.Visibility + "\tRepresents:" + l.Represents + "\tLeft:" + l.Left + "\tRight:" + l.Right + "\tTop:" + l.Top + "\tBottom:" + l.Bottom);
                     
-                    foreach (Message m in l.Messages)
-                    {
-                        Console.WriteLine("\t" + m.Name + "\tid:" + m.Id + "\tStart:" + m.Start + "\tEnd:" + m.End + "\tMessageKind:" + m.MessageKind + "\tMessageSort:" + m.MessageSort + "\tSendEvent:" + m.SendEvent + "\tReceiveEvent:" + m.ReceiveEvent + "\tLeft:" + m.Left + "\tRight:" + m.Right + "\tTop:" + m.Top + "\tBottom:" + m.Bottom + "\tSeqno:" + m.Seqno + "\tPrivatedata1:" + m.Privatedata1 + "\tPrivatedata2:" + m.Privatedata2 + "\tPrivatedata3:" + m.Privatedata3 + "\tPrivatedata4:" + m.Privatedata4 + "\tPrivatedata5:" + m.Privatedata5 + "\tPtStartX:" + m.PtStartX + "\tPtStartY:" + m.PtStartY + "\tPtEndX:" + m.PtEndX + "\tPtEndY:" + m.PtEndY + "\tSource:" + m.IdSource + "\tTarget:" + m.IdTarget);
-                        //Console.WriteLine("\t" + m.Seqno + " " + m.Id);
-                    }                    
+            //        foreach (Message m in l.Messages)
+            //        {
+            //            Console.WriteLine("\t" + m.Name + "\tid:" + m.Id + "\tStart:" + m.Start + "\tEnd:" + m.End + "\tMessageKind:" + m.MessageKind + "\tMessageSort:" + m.MessageSort + "\tSendEvent:" + m.SendEvent + "\tReceiveEvent:" + m.ReceiveEvent + "\tLeft:" + m.Left + "\tRight:" + m.Right + "\tTop:" + m.Top + "\tBottom:" + m.Bottom + "\tSeqno:" + m.Seqno + "\tPrivatedata1:" + m.Privatedata1 + "\tPrivatedata2:" + m.Privatedata2 + "\tPrivatedata3:" + m.Privatedata3 + "\tPrivatedata4:" + m.Privatedata4 + "\tPrivatedata5:" + m.Privatedata5 + "\tPtStartX:" + m.PtStartX + "\tPtStartY:" + m.PtStartY + "\tPtEndX:" + m.PtEndX + "\tPtEndY:" + m.PtEndY + "\tSource:" + m.IdSource + "\tTarget:" + m.IdTarget);
+            //            //Console.WriteLine("\t" + m.Seqno + " " + m.Id);
+            //        }                    
                 
-                }
-            }
+            //    }
+            //}
         }
 
         private bool validationXMI()

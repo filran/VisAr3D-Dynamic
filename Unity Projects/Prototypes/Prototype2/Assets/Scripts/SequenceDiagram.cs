@@ -30,7 +30,7 @@ public class SequenceDiagram : MonoBehaviour {
 			GameObject sequence = new GameObject(s.Name);
 
 //			Diagram's loop
-			if(s.Id == "EAID_C5D30B34_0645_46a3_95D3_A92E2696E07F")
+			if(s.Id != "EAID_C5D30B34_0645_46a3_95D3_A92E2696E07F")
 			{
 //				Debug.Log ("Achei o driagram");
 				foreach(Lifeline l in s.Lifelines)
@@ -179,7 +179,7 @@ public class SequenceDiagram : MonoBehaviour {
 					{
 						if(m.Key.IdTarget == ll.Key.Id)
 						{
-							if(l.Key.Seqno < ll.Key.Seqno)
+							if(l.Key.Seqno > ll.Key.Seqno)
 							{
 								m.Value.GetComponent<Renderer>().material.color = Color.grey;
 							}
