@@ -7,6 +7,7 @@ public class SequenceDiagram : MonoBehaviour {
 	public GameObject Cam;
 	public string url;
 	public GameObject goLifeline;
+    public GameObject goLine;
 	public GameObject goMessage;
 	public GameObject goClass;
 
@@ -16,7 +17,6 @@ public class SequenceDiagram : MonoBehaviour {
 
 	private Dictionary<Lifeline,GameObject> Lifelines;
 	private Dictionary<Message,GameObject> Messages;
-
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +30,7 @@ public class SequenceDiagram : MonoBehaviour {
 			GameObject sequence = new GameObject(s.Name);
 
 //			Diagram's loop
-			if(s.Id != "EAID_C5D30B34_0645_46a3_95D3_A92E2696E07F")
+			if(s.Id == "EAID_C5D30B34_0645_46a3_95D3_A92E2696E07F")
 			{
 //				Debug.Log ("Achei o driagram");
 				foreach(Lifeline l in s.Lifelines)
@@ -44,8 +44,12 @@ public class SequenceDiagram : MonoBehaviour {
 					txtLife.GetComponent<TextMesh>().text = l.Name;
 					txtLife.transform.position = new Vector3( this.scale(l.Left+(l.Width/2)), txtLife.transform.position.y, txtLife.transform.position.z);
 
-//					Debug.Log (l.Name);
-					foreach(Message m in l.Messages)
+                    GameObject line = (GameObject)Instantiate(goLine, new Vector3(this.scale(l.Left)+(this.scale(l.Width) /2), this.getHeightLine()/2 , 0), Quaternion.identity);
+                    line.transform.localScale = new Vector3(line.transform.localScale.x, this.getHeightLine(), line.transform.localScale.z);
+                    line.name = "line";
+
+                    //					Debug.Log (l.Name);
+                    foreach (Message m in l.Messages)
 					{
 //						Debug.Log("\t"+m.Name);
 						GameObject message = (GameObject)Instantiate(goMessage, new Vector3(this.scale(m.PtStartX),this.scale(m.PtEndY),0), Quaternion.identity);
@@ -65,6 +69,7 @@ public class SequenceDiagram : MonoBehaviour {
 												
 						//save hierarchy
 						lifeline.transform.parent = sequence.transform;
+                        line.transform.parent = lifeline.transform;
 						message.transform.parent = lifeline.transform;
 						txtMsg.transform.parent = message.transform;
 
@@ -83,6 +88,13 @@ public class SequenceDiagram : MonoBehaviour {
 	void Update () {
 		movementCamera ();
 	}
+
+    private float getHeightLine()
+    {
+        int i = this.parserXMI.Messages.Count - 1;
+        Message m = (Message)this.parserXMI.Messages[i];
+        return this.scale(m.PtEndY);
+    }
 
 	private void renderClassDiagram()
 	{
@@ -179,7 +191,7 @@ public class SequenceDiagram : MonoBehaviour {
 					{
 						if(m.Key.IdTarget == ll.Key.Id)
 						{
-							if(l.Key.Seqno > ll.Key.Seqno)
+							if(l.Key.Seqno < ll.Key.Seqno)
 							{
 								m.Value.GetComponent<Renderer>().material.color = Color.grey;
 							}

@@ -17,7 +17,7 @@ using System.Xml;
 
         private String url { get; set; }
         private XmlDocument parserxmi { get; set; }
-        //public Diagram Diagram { get; set; }
+        public Diagram Diagram { get; set; }
         public ArrayList Messages { get; set; }
         public ArrayList Lifelines { get; set; }
         public List<Sequence> SequenceDiagrams { get; set; }
@@ -26,7 +26,7 @@ using System.Xml;
             this.url = url;
             this.parserxmi = new XmlDocument();
             this.parserxmi.Load(this.url);
-            //this.Diagram = new Diagram();
+            this.Diagram = new Diagram();
             this.SequenceDiagrams = new List<Sequence>();            
             this.Messages = new ArrayList();
             this.Lifelines = new ArrayList();
