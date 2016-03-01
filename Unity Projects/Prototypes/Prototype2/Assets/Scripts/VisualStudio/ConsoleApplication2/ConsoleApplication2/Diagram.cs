@@ -12,7 +12,7 @@ using System.Text;
         public String Id { get; set; }
         public String Name { get; set; }
 
-        //InteractionOperator are loops etc...
+        //InteractionOperator are loops to sequence diagrams etc...
         public ArrayList InteractionOperator { get; set; }
 
         public Diagram()

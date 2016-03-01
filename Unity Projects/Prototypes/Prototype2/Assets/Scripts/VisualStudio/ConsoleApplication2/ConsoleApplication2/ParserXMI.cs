@@ -20,7 +20,9 @@ using System.Xml;
         public Diagram Diagram { get; set; }
         public ArrayList Messages { get; set; }
         public ArrayList Lifelines { get; set; }
+        public ArrayList Class { get; set; }
         public List<Sequence> SequenceDiagrams { get; set; }
+        public List<Class> ClassDiagrams { get; set; }
 
         public ParserXMI(String url){
             this.url = url;
@@ -28,8 +30,10 @@ using System.Xml;
             this.parserxmi.Load(this.url);
             this.Diagram = new Diagram();
             this.SequenceDiagrams = new List<Sequence>();            
+            this.ClassDiagrams = new List<Class>();   
             this.Messages = new ArrayList();
             this.Lifelines = new ArrayList();
+            this.Class = new ArrayList();
 
             if (this.validationXMI())
             {
@@ -43,7 +47,11 @@ using System.Xml;
                 }
             }   
 
-            //DIAGRAMS
+            //CLASS
+            foreach(Class c in this.Class)
+            {
+                Console.WriteLine(c.Name);
+            }
 
 
 
@@ -111,6 +119,14 @@ using System.Xml;
                                 s.Id = child.Attributes["xmi:id"].Value;
                                 s.Name = n.Attributes["name"].Value;
                                 this.SequenceDiagrams.Add(s);
+                            }
+
+                            if(n.Attributes["type"].Value == "Logical") //Class
+                            {
+                                Class c = new Class();
+                                c.Id = child.Attributes["xmi:id"].Value;
+                                c.Name = n.Attributes["name"].Value;
+                                this.ClassDiagrams.Add(c);
                             }
                         }
                     }
@@ -214,6 +230,37 @@ using System.Xml;
                     this.Lifelines.Add(lifeline);
                     
                 }
+
+                //save class
+                if (child.Name == "packagedElement")
+                {
+                    if (child.Attributes["xmi:type"].Value == "uml:Class")
+                    {
+                        foreach(XmlNode a in child.Attributes)
+                        {
+                            if(a.Name == "name")
+                            {
+                                Class c = new Class();
+                                c.addAttribute(readattributes(child));
+                                this.Class.Add(c);
+                            }
+                        }
+                    }
+
+                    if (child.Attributes["xmi:type"].Value == "uml:Interface")
+                    {
+                        foreach(XmlNode a in child.Attributes)
+                        {
+                            if(a.Name == "name")
+                            {
+                                Interface i = new Interface();
+                                i.addAttribute(readattributes(child));
+                                this.Class.Add(i);
+                            }
+                        }
+                    }
+                }
+
 
                 //save lifeline's attribute
                 if (child.Name == "element" )

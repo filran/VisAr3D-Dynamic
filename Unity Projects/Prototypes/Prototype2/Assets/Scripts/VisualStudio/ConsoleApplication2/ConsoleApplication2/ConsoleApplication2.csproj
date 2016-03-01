@@ -61,11 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attribute.cs" />
+    <Compile Include="Class.cs" />
     <Compile Include="Diagram.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="InteractionOperator.cs" />
+    <Compile Include="Interface.cs" />
     <Compile Include="Lifeline.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="Method.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="ParserXMI.cs" />
     <Compile Include="Program.cs" />
