@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOConcepts
 {
-    class Wheel
+    class Product
     {
+        public void testProduct()
+        {
+
+        }
     }
 }

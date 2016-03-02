@@ -14,7 +14,7 @@ using System.IO;
 
 
 namespace DesignPackage {
-	public abstract class SequenceEntity {
+	public abstract class SequenceEntity : IXmlNode {
 
 		public SequenceEntity(){
 
