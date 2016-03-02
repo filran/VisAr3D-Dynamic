@@ -87,11 +87,15 @@
     <Compile Include="Assets\Paths.cs" />
     <Compile Include="Assets\Scripts\SequenceDiagram.cs" />
     <Compile Include="Assets\Scripts\SetPivot.cs" />
+    <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Attribute.cs" />
+    <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Class.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Diagram.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\INode.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\InteractionOperator.cs" />
+    <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Interface.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Lifeline.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Message.cs" />
+    <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Method.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Node.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\ParserXMI.cs" />
     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Program.cs" />
