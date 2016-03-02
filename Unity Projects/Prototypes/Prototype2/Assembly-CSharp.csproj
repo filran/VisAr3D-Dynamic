@@ -51,11 +51,15 @@
      <Compile Include="Assets\Paths.cs" />
      <Compile Include="Assets\Scripts\SequenceDiagram.cs" />
      <Compile Include="Assets\Scripts\SetPivot.cs" />
+     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Attribute.cs" />
+     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Class.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Diagram.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\INode.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\InteractionOperator.cs" />
+     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Interface.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Lifeline.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Message.cs" />
+     <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Method.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Node.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\ParserXMI.cs" />
      <Compile Include="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Program.cs" />
@@ -86,16 +90,16 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>F:/Users/Filipe/Documents/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTween43">
- <HintPath>F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ <HintPath>F:/Users/Filipe/Documents/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
- <HintPath>F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ <HintPath>F:/Users/Filipe/Documents/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
- <HintPath>F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ <HintPath>F:/Users/Filipe/Documents/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/Prototypes/Prototype2/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

@@ -1,8 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SequenceDiagram.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Class.cs">
     <Files>
-      <File FileName="Assets\Scripts\SequenceDiagram.cs" Line="175" Column="5" />
+      <File FileName="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Attribute.cs" Line="7" Column="32" />
+      <File FileName="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Class.cs" Line="31" Column="34" />
+      <File FileName="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Method.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Interface.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\ParserXMI.cs" Line="243" Column="50" />
+      <File FileName="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Lifeline.cs" Line="62" Column="10" />
+      <File FileName="Assets\Scripts\VisualStudio\ConsoleApplication2\ConsoleApplication2\Diagram.cs" Line="13" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
