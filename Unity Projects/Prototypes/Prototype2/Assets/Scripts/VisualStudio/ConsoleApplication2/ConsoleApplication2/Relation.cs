@@ -6,13 +6,11 @@ using System.Text;
 
 //namespace ConsoleApplication2
 //{
-    class Attribute
+    class Relation
     {
         public String Id { get; set; }
-        public String Name { get; set; }
-        public String Visibility { get; set; }
+        public String Name{ get; set; }
 
         
-
-}
+    }
 //}

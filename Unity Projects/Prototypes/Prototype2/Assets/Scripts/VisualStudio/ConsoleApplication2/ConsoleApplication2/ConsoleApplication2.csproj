@@ -74,6 +74,7 @@
     <Compile Include="ParserXMI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relation.cs" />
     <Compile Include="Sequence.cs" />
   </ItemGroup>
   <ItemGroup>

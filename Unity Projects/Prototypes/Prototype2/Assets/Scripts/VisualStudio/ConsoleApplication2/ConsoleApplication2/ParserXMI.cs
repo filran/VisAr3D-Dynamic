@@ -53,6 +53,8 @@ using System.Xml;
                 Console.WriteLine(c.Name);
             }
 
+            
+
 
 
             //TEST OPERATORS
@@ -184,24 +186,6 @@ using System.Xml;
                     }
                 }
 
-                //save messages' attribute
-                //if (child.Name == "Sequence")
-                //{
-                //    foreach (XmlNode n in child.Attributes)
-                //    {
-                //        if (n.Name == "start" || n.Name == "end")
-                //        {
-                //            foreach (Message m in this.Messages)
-                //            {
-                //                if (child.Attributes["xmi:id"].Value == m.Id)
-                //                {
-                //                    m.Start = child.Attributes["start"].Value;
-                //                    m.End = child.Attributes["end"].Value;
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
 
                 //save Interaction
                 if (child.Name == "fragment")
@@ -303,44 +287,7 @@ using System.Xml;
                     }
                 }
 
-                //linking Lifeline and Message
-                //if (child.Name == "Sequence")
-                //{
-                //    foreach (Message m in Messages)
-                //    {
-                //        if (m.Id == child.Attributes["xmi:id"].Value)
-                //        {
-                //            //Console.WriteLine("Achou???");
-                //            foreach (Lifeline l in this.Diagram.Lifelines)
-                //            {
-                //                if (child.Attributes["start"].Value == l.Id)
-                //                {
-                //                    //Console.WriteLine("Achou???");
-                //                    l.addMessage(m);
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
-                                
-
-                //if (child.Name == "Sequence")
-                //{
-                //    foreach(Lifeline l in this.Diagram.Lifelines){
-                //        if (l.Id == child.Attributes["start"].Value)
-                //        {
-                //            Message message = new Message();
-                //            message.addAttribute("start", child.Attributes["start"].Value);
-                //        }
-                //    }
-                //}
-
-                //Console.Write(tabs + "<" + child.Name);
-                //foreach(XmlNode att in child.Attributes ){
-                //    Console.Write(" " + att.Name + "=" + att.Value);
-                //}
-                //Console.Write("/>");
-                //Console.WriteLine("</" + child.Name + "/>");
+                
 
                 readnodes(child);
             }
