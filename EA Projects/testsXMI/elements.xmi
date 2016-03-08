@@ -1,0 +1,20 @@
+<packagedElement xmi:type="uml:Class" xmi:id="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" name="ClassB" visibility="public">
+	<generalization xmi:type="uml:Generalization" xmi:id="EAID_CE8F1C8E_3C0D_4669_831D_935DA0512FDA" general="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6"/>
+</packagedElement>
+
+
+		<element xmi:idref="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" xmi:type="uml:Class" name="ClassB" scope="public">
+			<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="15" ea_eleType="element"/>
+			<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+			<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:13" modified="2016-03-07 10:11:17" complexity="1" status="Proposed"/>
+			<code product_name="Java" gentype="Java"/>
+			<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+			<tags/>
+			<xrefs/>
+			<extendedProperties tagged="0" package_name="this_is_a_package"/>
+			<links>
+				<Generalization xmi:id="EAID_CE8F1C8E_3C0D_4669_831D_935DA0512FDA" start="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" end="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6"/>
+			</links>
+		</element>
+
+

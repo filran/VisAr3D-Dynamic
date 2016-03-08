@@ -12,57 +12,26 @@ using System.Text;
 using System.IO;
 using System.Xml;
 using UnityEngine;
+using Composite;
 
 namespace ParserXMI {
 	public class XMI {
 
-        private String Url { get; set; }
-        private XmlDocument ParserXMI { get; set; }
-        private List<Diagram> Diagrams { get; set; }
-        private List<Element> Elements { get; set; }
+        public XmlDocument ParserXMI { get; set; }
+        private INode<string> Root = new Node<string>();
 
-		public XMI(String url){
-            this.Url = url;
-            this.ParserXMI = new XmlDocument();
-            this.ParserXMI.Load(this.Url);
-            this.Diagrams = new List<Diagram>();
-            this.Elements = new List<Element>();
+        public XMI(String url)
+        {
+            ParserXMI = new XmlDocument();
+            ParserXMI.Load(url);
 
             if(validationXMI())
             {
-                readnodes(this.ParserXMI.DocumentElement);
+                ReadNodes(ParserXMI.DocumentElement);
+                //Debug.Log(Root.Print(0));
+                Debug.Log(Root.Find("elements"));
             }
-
-            //TESTS
-
-            //DIAGRAMS
-            //foreach(Diagram d in Diagrams)
-            //{
-            //    Debug.Log(d.Name +" - "+d.Type +" - "+d.Id );
-            //    foreach(Element e in d.Elements)
-            //    {
-            //        Debug.Log(e.Seqno+" - "+e.Subject);
-            //    }
-            //    Debug.Log("\n");
-            //}
-
-            //ELEMENTS
-            foreach(Element e in this.Elements)
-            {
-                //Debug.Log(e.Name+" - "+ e.Idref);
-                Debug.Log(e.IdPackage +" - "+e.Name);
-
-                if(e.Links.Count > 0)
-                {
-                    foreach(Link l in e.Links)
-                    {
-                        Debug.Log("\t"+l.Tag);
-                    }
-                }
-            }
-
-
-		}
+        }
 
         private bool validationXMI()
         {
@@ -79,163 +48,35 @@ namespace ParserXMI {
             }
         }
 
-        private void readnodes(XmlNode tag)
+        private void ReadNodes(XmlNode node)
         {
-            foreach(XmlNode child in tag)
+            INode<string> nodec = new Node<string>();
+            nodec.Name = node.Name;
+            nodec.Attributes = ReadAttributes(node);
+            Root.Add(nodec);
+            ReadChildNodes(node,nodec);
+        }
+
+        private void ReadChildNodes(XmlNode node , INode<string> nodec)
+        {
+            foreach (XmlNode n in node)
             {
-                //Debug.Log(child.Name);
-
-                //read diagrams
-                readDiagrams(child);
-
-                //read elements (class, associations, lifelines)
-                readElements(child);
-
-                //linking elements and diagrams
-
-                //recursive
-                readnodes(child);
+                INode<string> nodecc = new Node<string>();
+                nodecc.Name = n.Name;
+                nodecc.Attributes = ReadAttributes(node);
+                nodec.Add(nodecc);
+                ReadChildNodes(n,nodecc);
             }
         }
 
-        private void readDiagrams(XmlNode tag)
+        private Dictionary<string, string> ReadAttributes(XmlNode node)
         {
-            if(tag.Name == "diagram")
+            Dictionary<string, string> att = new Dictionary<string, string>();
+            foreach(XmlNode a in node.Attributes)
             {
-                Diagram d = new Diagram();
-                d.Id = tag.Attributes["xmi:id"].Value;
-
-                foreach(XmlNode n in tag.ChildNodes)
-                {
-                    if (n.Name == "properties")
-                    {
-                        d.Name = n.Attributes["name"].Value;
-                        d.Type = n.Attributes["type"].Value;
-                    }
-
-                    if (n.Name == "elements")
-                    {
-                        foreach(XmlNode elementsNode in n.ChildNodes)
-                        {
-                            if(elementsNode.Name == "element")
-                            {
-                                Element e = new Element();
-
-                                foreach(XmlNode att in elementsNode.Attributes)
-                                {
-                                    if(att.Name == "geometry")
-                                    {
-                                        e.Geometry = elementsNode.Attributes["geometry"].Value;
-                                    }
-
-                                    if (att.Name == "subject")
-                                    {
-                                        e.Subject = elementsNode.Attributes["subject"].Value;
-                                    }
-
-                                    if (att.Name == "seqno")
-                                    {
-                                        e.Seqno = elementsNode.Attributes["seqno"].Value;
-                                    }
-
-                                    if (att.Name == "style")
-                                    {
-                                        e.Style = elementsNode.Attributes["style"].Value;
-                                    }
-                                }
-                                d.Elements.Add(e);
-                            }
-                        }
-                    }
-                }
-                Diagrams.Add(d);
+                att.Add(a.Name, a.Value);
             }
-        }
-
-        private void readElements(XmlNode tag)
-        {
-            if (tag.Name == "element" && tag.ParentNode.Name == "elements" && tag.ParentNode.ParentNode.Name == "xmi:Extension")
-            {
-                Element e = new Element();
-
-                foreach(XmlNode att in tag.Attributes)
-                {
-                    switch(att.Name)
-                    {
-                        case "xmi:idref":
-                            e.Idref = att.Value;
-                            break;
-
-                        case "xmi:type":
-                            e.Type = att.Value;
-                            break;
-
-                        case "name":
-                            e.Name = att.Value;
-                            break;
-
-                        case "scope":
-                            e.Scope = att.Value;
-                            break;
-
-                        default:
-                            break;
-                    }
-                }
-
-                foreach(XmlNode n in tag.ChildNodes)
-                {
-                    foreach(XmlNode att in n.Attributes)
-                    {
-                        switch(att.Name)
-                        {
-                            case "package":
-                                e.IdPackage = att.Value;
-                                break;
-
-                            case "isAbstract":
-                                e.isAbstract = att.Value;
-                                break;
-
-                            default:
-                                break;
-                        }
-                    }
-
-                    if(n.Name == "links")
-                    {
-                        foreach(XmlNode l in n.ChildNodes)
-                        {
-                            Link link = new Link();
-                            link.Tag = l.Name;
-
-                            foreach(XmlNode att in l.Attributes)
-                            {
-                                switch(att.Name)
-                                {
-                                    case "xmi:id":
-                                        link.Id = att.Value;
-                                        break;
-
-                                    case "start":
-                                        link.Start = att.Value;
-                                        break;
-
-                                    case "end":
-                                        link.End = att.Value;
-                                        break;
-
-                                    default:
-                                        break;
-                                }
-                            }
-                            e.Links.Add(link);
-                        }
-                    }
-                }
-
-                this.Elements.Add(e);
-            }
+            return att;
         }
 
 		~XMI(){

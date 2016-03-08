@@ -63,6 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Composite\Child.cs" />
+    <Compile Include="Assets\Scripts\Composite\Client.cs" />
+    <Compile Include="Assets\Scripts\Composite\Component.cs" />
+    <Compile Include="Assets\Scripts\Composite\Composite.cs" />
+    <Compile Include="Assets\Scripts\Composite\IComponent.cs" />
+    <Compile Include="Assets\Scripts\Composite\INode.cs" />
+    <Compile Include="Assets\Scripts\Composite\Node.cs" />
     <Compile Include="Assets\Scripts\Core\Attribute.cs" />
     <Compile Include="Assets\Scripts\Core\Class.cs" />
     <Compile Include="Assets\Scripts\Core\ClassDiagram.cs" />
@@ -81,8 +88,11 @@
     <Compile Include="Assets\Scripts\ParserXMI\Diagram.cs" />
     <Compile Include="Assets\Scripts\ParserXMI\Element.cs" />
     <Compile Include="Assets\Scripts\ParserXMI\Link.cs" />
+    <Compile Include="Assets\Scripts\ParserXMI\PackagedElement.cs" />
     <Compile Include="Assets\Scripts\ParserXMI\Program.cs" />
+    <Compile Include="Assets\Scripts\ParserXMI\XMI - Copy.cs" />
     <Compile Include="Assets\Scripts\ParserXMI\XMI.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
