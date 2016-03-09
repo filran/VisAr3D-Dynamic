@@ -19,6 +19,7 @@ namespace ParserXMI {
 
         public XmlDocument ParserXMI { get; set; }
         public List<Node> Nodes { get; set; }
+
         private List<Node> Classes { get; set; }
 
         public XMI(String url)
@@ -39,6 +40,17 @@ namespace ParserXMI {
             foreach(Node n in Nodes)
             {
                 Debug.Log(n.Tag+" "+n.Type+" "+n.Name);
+            }
+
+            //classes
+            foreach (Node c in Classes)
+            {
+                Debug.Log(c.Tag+" "+c.Type+" "+c.Name);
+
+                foreach(Node l in c.Nodes)
+                {
+                    Debug.Log("\t"+l.Tag);
+                }
             }
 
 
@@ -64,7 +76,7 @@ namespace ParserXMI {
             foreach(XmlNode n in node)
             {
                 BuildPackage(n);
-                BuildDiagram(n);
+                //BuildDiagram(n);
                 BuildClass(n);
                 ReadNodes(n);
             }
@@ -84,97 +96,137 @@ namespace ParserXMI {
             }
         }
 
-        private void BuildDiagram(XmlNode node)
-        {
-            if (node.Name == "diagram")
-            {
-                Node diagram = new Node();
-                diagram.Tag = node.Name;
-                diagram.Id = node.Attributes["xmi:id"].Value;
+        //private void BuildDiagram(XmlNode node)
+        //{
+        //    if (node.Name == "diagram")
+        //    {
+        //        Node diagram = new Node();
+        //        diagram.Tag = node.Name;
+        //        diagram.Id = node.Attributes["xmi:id"].Value;
 
-                if(node.HasChildNodes)
-                {
-                    foreach(XmlNode child in node)
-                    {
-                        switch(child.Name)
-                        {
-                            case "model":
-                                diagram.IdPackage = child.Attributes["package"].Value;
-                                break;
+        //        if(node.HasChildNodes)
+        //        {
+        //            foreach(XmlNode child in node)
+        //            {
+        //                switch(child.Name)
+        //                {
+        //                    case "model":
+        //                        diagram.IdPackage = child.Attributes["package"].Value;
+        //                        break;
 
-                            case "properties":
-                                diagram.Name = child.Attributes["name"].Value;
-                                break;
-                            //case "elements":
-                            //    if(child.HasChildNodes)
-                            //    {
-                            //        foreach(XmlNode e in child)
-                            //        {
-                            //            Node element = new Node();
-                            //            element.Tag = e.Name;
+        //                    case "properties":
+        //                        diagram.Name = child.Attributes["name"].Value;
+        //                        break;
+        //                    //case "elements":
+        //                    //    if(child.HasChildNodes)
+        //                    //    {
+        //                    //        foreach(XmlNode e in child)
+        //                    //        {
+        //                    //            Node element = new Node();
+        //                    //            element.Tag = e.Name;
 
-                            //            foreach(XmlNode att in e.Attributes)
-                            //            {
-                            //                switch(att.Name)
-                            //                {
-                            //                    case "geometry":
-                            //                        element.Geometry = att.Value;
-                            //                        break;
+        //                    //            foreach(XmlNode att in e.Attributes)
+        //                    //            {
+        //                    //                switch(att.Name)
+        //                    //                {
+        //                    //                    case "geometry":
+        //                    //                        element.Geometry = att.Value;
+        //                    //                        break;
 
-                            //                    case "subject":
-                            //                        element.Subject = att.Value;
-                            //                        break;
+        //                    //                    case "subject":
+        //                    //                        element.Subject = att.Value;
+        //                    //                        break;
 
-                            //                    case "seqno":
-                            //                        element.Seqno = att.Value;
-                            //                        break;
+        //                    //                    case "seqno":
+        //                    //                        element.Seqno = att.Value;
+        //                    //                        break;
 
-                            //                    case "style":
-                            //                        element.Style = att.Value;
-                            //                        break;
-                            //                }
-                            //            }
-                            //            diagram.Add(element);
-                            //        }
-                            //    }
-                            //    break;
-                        }
-                    }
-                }
+        //                    //                    case "style":
+        //                    //                        element.Style = att.Value;
+        //                    //                        break;
+        //                    //                }
+        //                    //            }
+        //                    //            diagram.Add(element);
+        //                    //        }
+        //                    //    }
+        //                    //    break;
+        //                }
+        //            }
+        //        }
 
-                foreach(Node package in Nodes)
-                {
-                    if (package.Type == "uml:Package")
-                    {
-                        if(package.Id == diagram.IdPackage)
-                        {
-                            package.Add(diagram);
-                        }
-                    }
-                }                
-            }
-        }
+        //        foreach(Node package in Nodes)
+        //        {
+        //            if (package.Type == "uml:Package")
+        //            {
+        //                if(package.Id == diagram.IdPackage)
+        //                {
+        //                    package.Add(diagram);
+        //                }
+        //            }
+        //        }                
+        //    }
+        //}
 
         private void BuildClass(XmlNode node)
         {
             if (node.Name == "packagedElement" && node.Attributes["xmi:type"].Value == "uml:Class")
             {
-                foreach (XmlNode n in node.ChildNodes)
+                //<packagedElement xmi:type="uml:Class" xmi:id="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" name="ClassA" visibility="public" isAbstract="true"/>
+                Node c = new Node();
+                c.Tag = node.Name;
+                foreach (XmlNode att in node.Attributes)
                 {
-                    //<packagedElement xmi:type="uml:Class" xmi:id="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" name="ClassA" visibility="public" isAbstract="true"/>
-                    Node c = new Node();
-                    c.Tag = n.Name;
-                    c.Type = n.Attributes["xmi:type"].Value;
-                    c.Id = n.Attributes["xmi:id"].Value;
-                    c.Name = n.Attributes["name"].Value;
-                    c.Visibility = n.Attributes["visibility"].Value;
-                    c.IsAbstract = n.Attributes["isAbstract"].Value;
-
-                    foreach(Node diagram in Nodes)
+                    switch (att.Name)
                     {
-                        if (diagram.Tag == "diagram")
+                        case "xmi:type":
+                            c.Type = att.Value;
+                            break;
+
+                        case "xmi:id":
+                            c.Id = att.Value;
+                            break;
+
+                        case "name":
+                            c.Name = att.Value;
+                            break;
+
+                        case "visibility":
+                            c.Visibility = att.Value;
+                            break;
+
+                        case "isAbstract":
+                            c.IsAbstract = att.Value;
+                            break;
+                    }
+                }                    
+                Classes.Add(c);
+            }
+
+            if (node.Name == "element" && node.ParentNode.ParentNode.Name == "xmi:Extension")
+            {
+                foreach (Node c in Classes)
+                {
+                    if (c.Id == node.Attributes["xmi:idref"].Value)
+                    {
+                        foreach (XmlNode child in node.ChildNodes)
                         {
-                            
+                            switch (child.Name)
+                            {
+                                case "model":
+                                    c.IdPackage = child.Attributes["package"].Value;
+                                    break;
+
+                                case "links":
+                                    foreach (XmlNode link in child.ChildNodes)
+                                    {
+                                        Node l = new Node();
+                                        l.Tag = link.Name;
+                                        l.Start = link.Attributes["start"].Value;
+                                        l.End = link.Attributes["end"].Value;
+                                        c.Add(l);
+                                    }
+                                    break;
+                            }
                         }
                     }
                 }

@@ -7,6 +7,7 @@ namespace ParserXMI
 {
     public class Node
     {
+        //XML atributtes
         public List<Node> Nodes { get; set; }
         public string Tag { get; set; }
         public string Type { get; set; }
@@ -19,7 +20,9 @@ namespace ParserXMI
         public string Seqno { get; set; }
         public string Style { get; set; }
         public string IsAbstract { get; set; }
-
+        public string Start { get; set; }
+        public string End { get; set; }
+       
         public Node()
         {
             Nodes = new List<Node>();
@@ -29,5 +32,6 @@ namespace ParserXMI
         {
             Nodes.Add(n);
         }
+        
     }
 }
