@@ -18,19 +18,30 @@ namespace ParserXMI {
 	public class XMI {
 
         public XmlDocument ParserXMI { get; set; }
-        private INode<string> Root = new Node<string>();
+        public List<Node> Nodes { get; set; }
+        private List<Node> Classes { get; set; }
 
         public XMI(String url)
         {
+            Nodes = new List<Node>();
+            Classes = new List<Node>();
+
             ParserXMI = new XmlDocument();
             ParserXMI.Load(url);
 
             if(validationXMI())
             {
                 ReadNodes(ParserXMI.DocumentElement);
-                //Debug.Log(Root.Print(0));
-                Debug.Log(Root.Find("elements"));
             }
+
+            //TESTS
+            //Packages
+            foreach(Node n in Nodes)
+            {
+                Debug.Log(n.Tag+" "+n.Type+" "+n.Name);
+            }
+
+
         }
 
         private bool validationXMI()
@@ -50,33 +61,124 @@ namespace ParserXMI {
 
         private void ReadNodes(XmlNode node)
         {
-            INode<string> nodec = new Node<string>();
-            nodec.Name = node.Name;
-            nodec.Attributes = ReadAttributes(node);
-            Root.Add(nodec);
-            ReadChildNodes(node,nodec);
-        }
-
-        private void ReadChildNodes(XmlNode node , INode<string> nodec)
-        {
-            foreach (XmlNode n in node)
+            foreach(XmlNode n in node)
             {
-                INode<string> nodecc = new Node<string>();
-                nodecc.Name = n.Name;
-                nodecc.Attributes = ReadAttributes(node);
-                nodec.Add(nodecc);
-                ReadChildNodes(n,nodecc);
+                BuildPackage(n);
+                BuildDiagram(n);
+                BuildClass(n);
+                ReadNodes(n);
             }
         }
 
-        private Dictionary<string, string> ReadAttributes(XmlNode node)
+        private void BuildPackage(XmlNode node)
         {
-            Dictionary<string, string> att = new Dictionary<string, string>();
-            foreach(XmlNode a in node.Attributes)
+            if (node.Name == "packagedElement" && node.ParentNode.ParentNode.Name == "uml:Model")
             {
-                att.Add(a.Name, a.Value);
+                Node n = new Node();
+                n.Tag = node.Name;
+                n.Type = node.Attributes["xmi:type"].Value;
+                n.Id = node.Attributes["xmi:id"].Value;
+                n.Name = node.Attributes["name"].Value;
+                n.Visibility = node.Attributes["visibility"].Value;
+                Nodes.Add(n);
             }
-            return att;
+        }
+
+        private void BuildDiagram(XmlNode node)
+        {
+            if (node.Name == "diagram")
+            {
+                Node diagram = new Node();
+                diagram.Tag = node.Name;
+                diagram.Id = node.Attributes["xmi:id"].Value;
+
+                if(node.HasChildNodes)
+                {
+                    foreach(XmlNode child in node)
+                    {
+                        switch(child.Name)
+                        {
+                            case "model":
+                                diagram.IdPackage = child.Attributes["package"].Value;
+                                break;
+
+                            case "properties":
+                                diagram.Name = child.Attributes["name"].Value;
+                                break;
+                            //case "elements":
+                            //    if(child.HasChildNodes)
+                            //    {
+                            //        foreach(XmlNode e in child)
+                            //        {
+                            //            Node element = new Node();
+                            //            element.Tag = e.Name;
+
+                            //            foreach(XmlNode att in e.Attributes)
+                            //            {
+                            //                switch(att.Name)
+                            //                {
+                            //                    case "geometry":
+                            //                        element.Geometry = att.Value;
+                            //                        break;
+
+                            //                    case "subject":
+                            //                        element.Subject = att.Value;
+                            //                        break;
+
+                            //                    case "seqno":
+                            //                        element.Seqno = att.Value;
+                            //                        break;
+
+                            //                    case "style":
+                            //                        element.Style = att.Value;
+                            //                        break;
+                            //                }
+                            //            }
+                            //            diagram.Add(element);
+                            //        }
+                            //    }
+                            //    break;
+                        }
+                    }
+                }
+
+                foreach(Node package in Nodes)
+                {
+                    if (package.Type == "uml:Package")
+                    {
+                        if(package.Id == diagram.IdPackage)
+                        {
+                            package.Add(diagram);
+                        }
+                    }
+                }                
+            }
+        }
+
+        private void BuildClass(XmlNode node)
+        {
+            if (node.Name == "packagedElement" && node.Attributes["xmi:type"].Value == "uml:Class")
+            {
+                foreach (XmlNode n in node.ChildNodes)
+                {
+                    //<packagedElement xmi:type="uml:Class" xmi:id="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" name="ClassA" visibility="public" isAbstract="true"/>
+                    Node c = new Node();
+                    c.Tag = n.Name;
+                    c.Type = n.Attributes["xmi:type"].Value;
+                    c.Id = n.Attributes["xmi:id"].Value;
+                    c.Name = n.Attributes["name"].Value;
+                    c.Visibility = n.Attributes["visibility"].Value;
+                    c.IsAbstract = n.Attributes["isAbstract"].Value;
+
+                    foreach(Node diagram in Nodes)
+                    {
+                        if (diagram.Tag == "diagram")
+                        {
+                            
+                        }
+                    }
+                }
+            }
         }
 
 		~XMI(){
