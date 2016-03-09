@@ -39,18 +39,19 @@ namespace ParserXMI {
             //Packages
             foreach(Node n in Nodes)
             {
-                Debug.Log(n.Tag+" "+n.Type+" "+n.Name);
+                //Debug.Log(n.Tag+" "+n.Type+" "+n.Name);
             }
 
             //classes
             foreach (Node c in Classes)
             {
-                Debug.Log(c.Tag+" "+c.Type+" "+c.Name);
-
+                string s = c.Tag + " " + c.Type + " " + c.Name;
+                s += "\nLinks:\n";
                 foreach(Node l in c.Nodes)
                 {
-                    Debug.Log("\t"+l.Tag);
+                    s += "\t" + l.Tag +  " Start:" + l.Start + " End:" + l.End + "\n";
                 }
+                Debug.Log(s);
             }
 
 
