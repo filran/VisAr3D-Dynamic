@@ -58,6 +58,13 @@ namespace Scripts
                 //Debug.Log(s);
             }
 
+            //TEST
+            //THECORE
+            Debug.Log(core.Packages.Count);
+            foreach(Package p in core.Packages)
+            {
+                
+            }
         }
     }
 }
