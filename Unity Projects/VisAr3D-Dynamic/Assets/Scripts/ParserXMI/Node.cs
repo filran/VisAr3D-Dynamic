@@ -29,7 +29,7 @@ namespace ParserXMI
 
         public Node()
         {
-            Nodes = new List<IXmlNode>();
+            
         }
 
 

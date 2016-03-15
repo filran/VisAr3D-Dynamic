@@ -73,7 +73,7 @@ namespace ParserXMI {
             }
         }
 
-        private void AddAttributes(XmlNode node , Node n)
+        private void AddAttributes(XmlNode node , IXmlNode n)
         {
             foreach(XmlNode att in node.Attributes)
             {
@@ -88,6 +88,10 @@ namespace ParserXMI {
                         break;
 
                     case "xmi:id":
+                        n.Id = att.Value;
+                        break;
+
+                    case "xmi:idref":
                         n.Id = att.Value;
                         break;
 
@@ -134,21 +138,23 @@ namespace ParserXMI {
             }
         }
 
+
         private void BuildPackage(XmlNode node)
         {
             if (node.Name == "packagedElement" && node.ParentNode.ParentNode.Name == "uml:Model")
             {
-                Node n = new Node();
+                IXmlNode n = new Package();
                 AddAttributes(node, n);
                 Packages.Add(n);
             }
         }   
 
+
         private void BuildDiagram(XmlNode node)
         {
             if(node.Name == "diagram")
             {
-                Node n = new Node();
+                IXmlNode n = new Node();
                 AddAttributes(node, n);
 
                 foreach(XmlNode subnode in node.ChildNodes)
@@ -168,7 +174,7 @@ namespace ParserXMI {
                             {
                                 Node e = new Node();
                                 AddAttributes(element, e);
-                                n.Nodes.Add(e);
+                                n.ChildNodes.Add(e);
                             }
                             break;
                     }
@@ -181,7 +187,7 @@ namespace ParserXMI {
         {
             if (node.Name == "packagedElement" && node.Attributes["xmi:type"].Value == "uml:Class" )
             {
-                Node n = new Node();
+                IXmlNode n = new Class();
                 AddAttributes(node, n);
                 foreach (XmlNode subnode in node.ChildNodes)
                 {
@@ -204,7 +210,7 @@ namespace ParserXMI {
         {
             if (node.Name == "element" && node.ParentNode.Name == "elements" && node.ParentNode.ParentNode.Name == "xmi:Extension")
             {
-                foreach(Node n in Classes)
+                foreach(IXmlNode n in Classes)
                 {
                     if(node.Attributes["xmi:idref"].Value == n.Id)
                     {
@@ -220,10 +226,10 @@ namespace ParserXMI {
                                 case "links":
                                     foreach(XmlNode link in subnode.ChildNodes)
                                     {
-                                        Node l = new Node();
+                                        IXmlNode l = new Relationship();
                                         l.Tag = link.Name;
                                         AddAttributes(link, l);
-                                        n.Nodes.Add(l);
+                                        n.ChildNodes.Add(l);
                                     }
                                     break;
                             }
@@ -233,13 +239,14 @@ namespace ParserXMI {
             }
         }
 
+
         private void BuildRelationshipPackagedElement(XmlNode node)
         {
             if (node.Name == "packagedElement" )
             {
                 if (node.Attributes["xmi:type"].Value == "uml:Realization" || node.Attributes["xmi:type"].Value == "uml:Association")
                 {
-                    Node n = new Node();
+                    IXmlNode n = new Relationship();
                     n.Tag = n.Name;
                     AddAttributes(node, n);
                     Relationships.Add(n);
@@ -253,7 +260,7 @@ namespace ParserXMI {
             {
                 foreach(XmlNode subnode in node)
                 {
-                    foreach(Node r in Relationships )
+                    foreach(IXmlNode r in Relationships )
                     {
                         if (subnode.Attributes["xmi:id"].Value == r.Id)
                         {
@@ -264,11 +271,34 @@ namespace ParserXMI {
             }
         }
 
-        private void BuildRelationshipConnector(XmlNode node)
+            private void AddGeneralizationToRelationships(XmlNode node)
         {
             if (node.Name == "connector")
             {
-                foreach(Node n in Relationships)
+                foreach (XmlNode subnode in node.ChildNodes)
+                {
+                    if (subnode.Name == "properties")
+                    {
+                        if (subnode.Attributes["ea_type"].Value == "Generalization")
+                        {
+                            IXmlNode r = new Relationship();
+                            r.Name = "Generalization";
+                            AddAttributes(node, r);
+                            AddAttributes(subnode, r);
+                            Relationships.Add(r);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void BuildRelationshipConnector(XmlNode node)
+        {
+            AddGeneralizationToRelationships(node);
+
+            if (node.Name == "connector")
+            {
+                foreach(IXmlNode n in Relationships)
                 {
                     if(node.Attributes["xmi:idref"].Value == n.Id)
                     {
@@ -282,6 +312,11 @@ namespace ParserXMI {
 
                                 case "target":
                                     n.IdTarget = subnode.Attributes["xmi:idref"].Value;
+                                    n.Aggregation = subnode.ChildNodes.Item(2).Attributes["aggregation"].Value;
+                                    break;
+
+                                case "properties":
+                                    n.EA_Type = subnode.Attributes["ea_type"].Value;
                                     break;
                             }
                         }

@@ -50,11 +50,17 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -74,10 +80,14 @@
     <Compile Include="Assets\Scripts\Composite\IComponent.cs" />
     <Compile Include="Assets\Scripts\Composite\INode.cs" />
     <Compile Include="Assets\Scripts\Composite\Node.cs" />
+    <Compile Include="Assets\Scripts\Core\Aggregation.cs" />
+    <Compile Include="Assets\Scripts\Core\Association.cs" />
     <Compile Include="Assets\Scripts\Core\Attribute.cs" />
     <Compile Include="Assets\Scripts\Core\Class.cs" />
     <Compile Include="Assets\Scripts\Core\ClassDiagram.cs" />
+    <Compile Include="Assets\Scripts\Core\Composition.cs" />
     <Compile Include="Assets\Scripts\Core\Diagram.cs" />
+    <Compile Include="Assets\Scripts\Core\Generalization.cs" />
     <Compile Include="Assets\Scripts\Core\IXmlNode.cs" />
     <Compile Include="Assets\Scripts\Core\Interface.cs" />
     <Compile Include="Assets\Scripts\Core\LogicalEntity.cs" />
@@ -86,6 +96,7 @@
     <Compile Include="Assets\Scripts\Core\Method.cs" />
     <Compile Include="Assets\Scripts\Core\Object.cs" />
     <Compile Include="Assets\Scripts\Core\Package.cs" />
+    <Compile Include="Assets\Scripts\Core\Realisation.cs" />
     <Compile Include="Assets\Scripts\Core\Relationship.cs" />
     <Compile Include="Assets\Scripts\Core\SequenceDiagram.cs" />
     <Compile Include="Assets\Scripts\Core\SoftwareEntity.cs" />
