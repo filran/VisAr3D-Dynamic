@@ -7,6 +7,7 @@ public class ContentDiagram : MonoBehaviour {
 
     public GameObject Class;
     public Material lineMaterial;
+    public string dirsourcecode;
 
     private TheCore Core { get; set; }
     private ClassDiagram TheClassDidagram { get; set; }
@@ -64,6 +65,7 @@ public class ContentDiagram : MonoBehaviour {
                 foreach(Class c in classdiagram.SoftwareEntities)
                 {
                     GameObject go_class = (GameObject)Instantiate(Class,new Vector3(x,0,0),Quaternion.identity);
+                    go_class.AddComponent<OpenCode>();
                     Transform text = go_class.transform.FindChild("classname");
                     text.GetComponent<TextMesh>().text = c.Name;
                     Classes.Add(c,go_class);
