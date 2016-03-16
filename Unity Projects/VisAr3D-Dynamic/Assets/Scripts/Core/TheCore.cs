@@ -14,14 +14,19 @@ using ParserXMI;
 using UnityEngine;
 
 namespace Core {
-	public class TheCore {
+	public class TheCore : IXmlNode {
 
         public XMI TheXMI;
         public List<IXmlNode> Packages { get; private set; }
 
+        public List<IXmlNode> AllDiagrams { get; private set; }
+
 		public TheCore(string url){
             TheXMI = new XMI(url);
             Packages = new List<IXmlNode>();
+
+            AllDiagrams = TheXMI.Diagrams;
+
             AddPackages();
             AddDiagramsToPackages();
             AddClassesToDiagrams();
@@ -29,7 +34,7 @@ namespace Core {
 		}
 
         //TROCA DE VALROES ENTRE AS CLASSES
-        private IXmlNode InterchangeClass(IXmlNode oldclass, IXmlNode newclass)
+        public IXmlNode InterchangeClass(IXmlNode oldclass, IXmlNode newclass)
         {
             newclass.ChildNodes = oldclass.ChildNodes;
             newclass.EA_Type = oldclass.EA_Type;
