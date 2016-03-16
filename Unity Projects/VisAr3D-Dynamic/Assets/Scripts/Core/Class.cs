@@ -17,10 +17,10 @@ using Core;
 namespace Core {
 	public class Class : SoftwareEntity {
 
-		public Core.Object m_Object;
+		//public Core.Object m_Object;
 
 		public Class(){
-
+            
 		}
 
 		~Class(){
