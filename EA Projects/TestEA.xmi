@@ -7,10 +7,10 @@
 				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_9D709F50_35A8_45d4_8BC1_95048EF9C857" body="Class libraries, API's and other re-usable components">
 					<annotatedElement xmi:idref="EAPK_5592153E_52BC_4dcb_9B35_48C645208444"/>
 				</ownedComment>
-				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_65E85085_7036_4fa2_AD98_3699049C6893" body="Classes, interfaces and logical components for the new system">
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_65E85085_7036_4fa2_AD98_3699049C6893" body="EClasss, interfaces and logical components for the new system">
 					<annotatedElement xmi:idref="EAPK_B2FE2661_E468_4df7_9EEE_780BC6E779E0"/>
 				</ownedComment>
-				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_3C677E4E_FBDF_4408_BBD5_B50D55B65AF6" body="The Class Model is a logical model of the software system under construction. Classes generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the classes and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains classes and components that have been designed and built earlier and are being reused as part of the current project."/>
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_3C677E4E_FBDF_4408_BBD5_B50D55B65AF6" body="The Class Model is a logical model of the software system under construction. EClasss generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the EClasss and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains EClasss and components that have been designed and built earlier and are being reused as part of the current project."/>
 				<packagedElement xmi:type="uml:Class" xmi:id="EAID_A84BC378_3BA9_4792_8E32_833334676649" name="$help://class_model_pattern.htm" visibility="public"/>
 				<packagedElement xmi:type="uml:Class" xmi:id="EAID_D296BF4F_DB65_4c9d_A4C0_B8FC8582785A" name="$help://classdiagram.htm" visibility="public"/>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_B2FE2661_E468_4df7_9EEE_780BC6E779E0" name="System" visibility="public">
@@ -39,10 +39,10 @@
 			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" name="this_is_a_package" visibility="public">
 				<packagedElement xmi:type="uml:Collaboration" xmi:id="EAID_CB000000_6D1_4137_41f3_9F66_BEAD76FBC44" name="EA_Collaboration1" visibility="public">
 					<ownedBehavior xmi:type="uml:Interaction" xmi:id="EAID_IN000000_6D1_4137_41f3_9F66_BEAD76FBC44" name="EA_Interaction1" visibility="public">
-						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10" name="ClassA" visibility="public" represents="EAID_AT000000_5F07_4d50_9A62_0ACD961AFC10"/>
-						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0" name="ClassB" visibility="public" represents="EAID_AT000000_24CA_4ebf_8F7C_0BED08FDE4F0"/>
-						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_21F4216B_4EB2_45ea_BF1A_81A4A71D9A62" name="ClassC" visibility="public" represents="EAID_AT000000_4EB2_45ea_BF1A_81A4A71D9A62"/>
-						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_LL000000_E679_4810_A292_8B34D229D800" name="ClassD" visibility="public" represents="EAID_AT000000_000_E679_4810_A292_8B34D229D80"/>
+						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10" name="AClass" visibility="public" represents="EAID_AT000000_5F07_4d50_9A62_0ACD961AFC10"/>
+						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0" name="BClass" visibility="public" represents="EAID_AT000000_24CA_4ebf_8F7C_0BED08FDE4F0"/>
+						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_21F4216B_4EB2_45ea_BF1A_81A4A71D9A62" name="CClass" visibility="public" represents="EAID_AT000000_4EB2_45ea_BF1A_81A4A71D9A62"/>
+						<lifeline xmi:type="uml:Lifeline" xmi:id="EAID_LL000000_E679_4810_A292_8B34D229D800" name="DClass" visibility="public" represents="EAID_AT000000_000_E679_4810_A292_8B34D229D80"/>
 						<fragment xmi:type="uml:OccurrenceSpecification" xmi:id="EAID_FR000001_5F07_4d50_9A62_0ACD961AFC10" covered="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10"/>
 						<fragment xmi:type="uml:OccurrenceSpecification" xmi:id="EAID_FR000000_24CA_4ebf_8F7C_0BED08FDE4F0" covered="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0"/>
 						<fragment xmi:type="uml:OccurrenceSpecification" xmi:id="EAID_FR000002_24CA_4ebf_8F7C_0BED08FDE4F0" covered="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0"/>
@@ -72,7 +72,7 @@
 						<type xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800"/>
 					</ownedAttribute>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Class" xmi:id="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" name="ClassA" visibility="public" isAbstract="true"/>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" name="AClass" visibility="public" isAbstract="true"/>
 				<packagedElement xmi:type="uml:Association" xmi:id="EAID_0EFAE9AD_554E_4771_84A4_C31E2D5EAF94" visibility="public">
 					<memberEnd xmi:idref="EAID_dstFAE9AD_554E_4771_84A4_C31E2D5EAF94"/>
 					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstFAE9AD_554E_4771_84A4_C31E2D5EAF94" visibility="public" association="EAID_0EFAE9AD_554E_4771_84A4_C31E2D5EAF94" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -83,10 +83,10 @@
 						<type xmi:idref="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6"/>
 					</ownedEnd>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Class" xmi:id="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" name="ClassB" visibility="public">
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" name="BClass" visibility="public">
 					<generalization xmi:type="uml:Generalization" xmi:id="EAID_CE8F1C8E_3C0D_4669_831D_935DA0512FDA" general="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6"/>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Class" xmi:id="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38" name="ClassC" visibility="public"/>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38" name="CClass" visibility="public"/>
 				<packagedElement xmi:type="uml:Association" xmi:id="EAID_05CAF6E5_B81E_40ca_AFEC_4D6E4AF9EEC2" visibility="public">
 					<memberEnd xmi:idref="EAID_dstCAF6E5_B81E_40ca_AFEC_4D6E4AF9EEC2"/>
 					<memberEnd xmi:idref="EAID_srcCAF6E5_B81E_40ca_AFEC_4D6E4AF9EEC2"/>
@@ -94,7 +94,7 @@
 						<type xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800"/>
 					</ownedEnd>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Class" xmi:id="EAID_F5EB71F5_E679_4810_A292_8B34D229D800" name="ClassD" visibility="public">
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_F5EB71F5_E679_4810_A292_8B34D229D800" name="DClass" visibility="public">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstCAF6E5_B81E_40ca_AFEC_4D6E4AF9EEC2" visibility="public" association="EAID_05CAF6E5_B81E_40ca_AFEC_4D6E4AF9EEC2" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 						<type xmi:idref="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38"/>
 					</ownedAttribute>
@@ -106,7 +106,7 @@
 						<type xmi:idref="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643"/>
 					</ownedEnd>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Class" xmi:id="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" name="ClassE" visibility="public">
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" name="EClass" visibility="public">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst9A7E78_B1D4_472f_8E29_E072141FA156" visibility="public" association="EAID_A89A7E78_B1D4_472f_8E29_E072141FA156" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 						<type xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800"/>
 					</ownedAttribute>
@@ -121,7 +121,7 @@
 						<type xmi:idref="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643"/>
 					</ownedEnd>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Class" xmi:id="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04" name="ClassF" visibility="public"/>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04" name="FClass" visibility="public"/>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_43D85C2A_F0D2_4511_9136_2AF83F78A9DA" name="subpackage" visibility="public"/>
 			</packagedElement>
 		</packagedElement>
@@ -151,7 +151,7 @@
 			</element>
 			<element xmi:idref="EAID_3C677E4E_FBDF_4408_BBD5_B50D55B65AF6" xmi:type="uml:Note" name="Note" scope="public">
 				<model package="EAPK_7A6620DE_F951_45fa_966F_B9BAB57CC419" tpos="0" ea_localid="48" ea_eleType="element" name="Note"/>
-				<properties documentation="The Class Model is a logical model of the software system under construction. Classes generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the classes and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains classes and components that have been designed and built earlier and are being reused as part of the current project." isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<properties documentation="The Class Model is a logical model of the software system under construction. EClasss generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the EClasss and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains EClasss and components that have been designed and built earlier and are being reused as part of the current project." isSpecification="false" sType="Note" nType="0" scope="public"/>
 				<project version="1.0" phase="1.0" created="2016-03-07 13:34:39" modified="2016-03-07 13:34:39" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
@@ -161,7 +161,7 @@
 			</element>
 			<element xmi:idref="EAID_65E85085_7036_4fa2_AD98_3699049C6893" xmi:type="uml:Note" scope="public">
 				<model package="EAPK_7A6620DE_F951_45fa_966F_B9BAB57CC419" tpos="0" ea_localid="47" ea_eleType="element"/>
-				<properties documentation="Classes, interfaces and logical components for the new system" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<properties documentation="EClasss, interfaces and logical components for the new system" isSpecification="false" sType="Note" nType="0" scope="public"/>
 				<project version="1.0" phase="1.0" created="2016-03-07 13:34:39" modified="2016-03-07 13:34:39" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
@@ -311,7 +311,7 @@
 				<times created="2016-03-07 10:10:04" modified="2016-03-07 10:10:19" lastloaddate="2016-03-07 10:10:04" lastsavedate="2016-03-07 10:10:04"/>
 				<flags iscontrolled="FALSE" isnamespace="1" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE" packageFlags="isModel=1;VICON=3;"/>
 			</element>
-			<element xmi:idref="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" xmi:type="uml:Class" name="ClassA" scope="public">
+			<element xmi:idref="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" xmi:type="uml:Class" name="AClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="14" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:05" modified="2016-03-07 15:39:29" complexity="1" status="Proposed"/>
@@ -325,7 +325,7 @@
 					<Generalization xmi:id="EAID_CE8F1C8E_3C0D_4669_831D_935DA0512FDA" start="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" end="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" xmi:type="uml:Class" name="ClassB" scope="public">
+			<element xmi:idref="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" xmi:type="uml:Class" name="BClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="15" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:13" modified="2016-03-07 10:11:17" complexity="1" status="Proposed"/>
@@ -338,7 +338,7 @@
 					<Generalization xmi:id="EAID_CE8F1C8E_3C0D_4669_831D_935DA0512FDA" start="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" end="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38" xmi:type="uml:Class" name="ClassC" scope="public">
+			<element xmi:idref="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38" xmi:type="uml:Class" name="CClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="16" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:30" modified="2016-03-07 10:11:33" complexity="1" status="Proposed"/>
@@ -352,7 +352,7 @@
 					<Association xmi:id="EAID_0EFAE9AD_554E_4771_84A4_C31E2D5EAF94" start="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" end="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800" xmi:type="uml:Class" name="ClassD" scope="public">
+			<element xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800" xmi:type="uml:Class" name="DClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="17" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:12:12" modified="2016-03-07 10:12:16" complexity="1" status="Proposed"/>
@@ -367,7 +367,7 @@
 					<Sequence xmi:id="EAID_ABDE1C4E_2809_415b_B7AF_E3209EBA8427" start="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10" end="EAID_F5EB71F5_E679_4810_A292_8B34D229D800"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" xmi:type="uml:Class" name="ClassE" scope="public">
+			<element xmi:idref="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" xmi:type="uml:Class" name="EClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="18" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:12:25" modified="2016-03-07 10:12:28" complexity="1" status="Proposed"/>
@@ -381,7 +381,7 @@
 					<Aggregation xmi:id="EAID_A89A7E78_B1D4_472f_8E29_E072141FA156" start="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" end="EAID_F5EB71F5_E679_4810_A292_8B34D229D800"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04" xmi:type="uml:Class" name="ClassF" scope="public">
+			<element xmi:idref="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04" xmi:type="uml:Class" name="FClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="20" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:13:03" modified="2016-03-07 10:13:07" complexity="1" status="Proposed"/>
@@ -394,7 +394,7 @@
 					<Association xmi:id="EAID_98C99CC4_D329_45d0_BE17_6D40FE425D77" start="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" end="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10" xmi:type="uml:Sequence" name="ClassA" scope="public">
+			<element xmi:idref="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10" xmi:type="uml:Sequence" name="AClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="41" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Sequence" nType="0" scope="public"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:12" modified="2016-03-07 10:20:15" complexity="1" status="Proposed"/>
@@ -409,7 +409,7 @@
 					<Sequence xmi:id="EAID_1BBBF3BA_9479_40f7_8543_4617A87871CA" start="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0" end="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0" xmi:type="uml:Sequence" name="ClassB" scope="public">
+			<element xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0" xmi:type="uml:Sequence" name="BClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="42" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Sequence" nType="0" scope="public"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:18" modified="2016-03-07 10:20:24" complexity="1" status="Proposed"/>
@@ -425,7 +425,7 @@
 					<Sequence xmi:id="EAID_E7D5DDBD_A205_4556_8030_28FBA0F2FE93" start="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10" end="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_21F4216B_4EB2_45ea_BF1A_81A4A71D9A62" xmi:type="uml:Sequence" name="ClassC" scope="public">
+			<element xmi:idref="EAID_21F4216B_4EB2_45ea_BF1A_81A4A71D9A62" xmi:type="uml:Sequence" name="CClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="43" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Sequence" nType="0" scope="public"/>
 				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:27" modified="2016-03-07 10:20:31" complexity="1" status="Proposed"/>
@@ -628,7 +628,7 @@
 			</connector>
 			<connector xmi:idref="EAID_0EFAE9AD_554E_4771_84A4_C31E2D5EAF94">
 				<source xmi:idref="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6">
-					<model ea_localid="14" type="Class" name="ClassA"/>
+					<model ea_localid="14" type="Class" name="AClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -639,7 +639,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38">
-					<model ea_localid="16" type="Class" name="ClassC"/>
+					<model ea_localid="16" type="Class" name="CClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -663,7 +663,7 @@
 			</connector>
 			<connector xmi:idref="EAID_CE8F1C8E_3C0D_4669_831D_935DA0512FDA">
 				<source xmi:idref="EAID_A24494B3_C10B_429a_B7F0_B0703286E405">
-					<model ea_localid="15" type="Class" name="ClassB"/>
+					<model ea_localid="15" type="Class" name="BClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -674,7 +674,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6">
-					<model ea_localid="14" type="Class" name="ClassA"/>
+					<model ea_localid="14" type="Class" name="AClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -697,7 +697,7 @@
 			</connector>
 			<connector xmi:idref="EAID_05CAF6E5_B81E_40ca_AFEC_4D6E4AF9EEC2">
 				<source xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800">
-					<model ea_localid="17" type="Class" name="ClassD"/>
+					<model ea_localid="17" type="Class" name="DClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -708,7 +708,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38">
-					<model ea_localid="16" type="Class" name="ClassC"/>
+					<model ea_localid="16" type="Class" name="CClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="composite" containment="Unspecified"/>
 					<constraints/>
@@ -731,7 +731,7 @@
 			</connector>
 			<connector xmi:idref="EAID_A89A7E78_B1D4_472f_8E29_E072141FA156">
 				<source xmi:idref="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643">
-					<model ea_localid="18" type="Class" name="ClassE"/>
+					<model ea_localid="18" type="Class" name="EClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -742,7 +742,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800">
-					<model ea_localid="17" type="Class" name="ClassD"/>
+					<model ea_localid="17" type="Class" name="DClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="shared" containment="Unspecified"/>
 					<constraints/>
@@ -765,7 +765,7 @@
 			</connector>
 			<connector xmi:idref="EAID_ABDE1C4E_2809_415b_B7AF_E3209EBA8427">
 				<source xmi:idref="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10">
-					<model ea_localid="41" type="Sequence" name="ClassA"/>
+					<model ea_localid="41" type="Sequence" name="AClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type containment="Unspecified"/>
 					<constraints/>
@@ -776,7 +776,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800">
-					<model ea_localid="17" type="Class" name="ClassD"/>
+					<model ea_localid="17" type="Class" name="DClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -798,7 +798,7 @@
 			</connector>
 			<connector xmi:idref="EAID_98C99CC4_D329_45d0_BE17_6D40FE425D77">
 				<source xmi:idref="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643">
-					<model ea_localid="18" type="Class" name="ClassE"/>
+					<model ea_localid="18" type="Class" name="EClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -809,7 +809,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04">
-					<model ea_localid="20" type="Class" name="ClassF"/>
+					<model ea_localid="20" type="Class" name="FClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -833,7 +833,7 @@
 			</connector>
 			<connector xmi:idref="EAID_E7D5DDBD_A205_4556_8030_28FBA0F2FE93">
 				<source xmi:idref="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10">
-					<model ea_localid="41" type="Sequence" name="ClassA"/>
+					<model ea_localid="41" type="Sequence" name="AClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type containment="Unspecified"/>
 					<constraints/>
@@ -844,7 +844,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0">
-					<model ea_localid="42" type="Sequence" name="ClassB"/>
+					<model ea_localid="42" type="Sequence" name="BClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -866,7 +866,7 @@
 			</connector>
 			<connector xmi:idref="EAID_1BBBF3BA_9479_40f7_8543_4617A87871CA">
 				<source xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0">
-					<model ea_localid="42" type="Sequence" name="ClassB"/>
+					<model ea_localid="42" type="Sequence" name="BClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type containment="Unspecified"/>
 					<constraints/>
@@ -877,7 +877,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10">
-					<model ea_localid="41" type="Sequence" name="ClassA"/>
+					<model ea_localid="41" type="Sequence" name="AClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -899,7 +899,7 @@
 			</connector>
 			<connector xmi:idref="EAID_867C91AE_1023_40f3_B063_20706636A597">
 				<source xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0">
-					<model ea_localid="42" type="Sequence" name="ClassB"/>
+					<model ea_localid="42" type="Sequence" name="BClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type containment="Unspecified"/>
 					<constraints/>
@@ -910,7 +910,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_21F4216B_4EB2_45ea_BF1A_81A4A71D9A62">
-					<model ea_localid="43" type="Sequence" name="ClassC"/>
+					<model ea_localid="43" type="Sequence" name="CClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -932,7 +932,7 @@
 			</connector>
 			<connector xmi:idref="EAID_1E5B0DC7_0831_4a3d_A1CC_561F8DD9E015">
 				<source xmi:idref="EAID_21F4216B_4EB2_45ea_BF1A_81A4A71D9A62">
-					<model ea_localid="43" type="Sequence" name="ClassC"/>
+					<model ea_localid="43" type="Sequence" name="CClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type containment="Unspecified"/>
 					<constraints/>
@@ -943,7 +943,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0">
-					<model ea_localid="42" type="Sequence" name="ClassB"/>
+					<model ea_localid="42" type="Sequence" name="BClass"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>

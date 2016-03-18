@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class SequenceDiagram : MonoBehaviour {
 
@@ -19,8 +20,10 @@ public class SequenceDiagram : MonoBehaviour {
 	private Dictionary<Message,GameObject> Messages;
 
 	// Use this for initialization
-	void Start () {
-		Sequences = new Dictionary<Sequence,GameObject> ();
+	IEnumerator Start () {
+        yield return new WaitForSeconds(1);
+
+        Sequences = new Dictionary<Sequence,GameObject> ();
 		Lifelines = new Dictionary<Lifeline,GameObject> ();
 		Messages = new Dictionary<Message,GameObject> ();
 		parserXMI = new ParserXMI (@url);
@@ -28,7 +31,6 @@ public class SequenceDiagram : MonoBehaviour {
 		foreach(Sequence s in parserXMI.SequenceDiagrams)
 		{
 			GameObject sequence = new GameObject(s.Name);
-
 //			Diagram's loop
 			if(s.Id == "EAID_C5D30B34_0645_46a3_95D3_A92E2696E07F")
 			{
@@ -49,12 +51,14 @@ public class SequenceDiagram : MonoBehaviour {
                     line.name = "line";
 
                     //					Debug.Log (l.Name);
+                    int count = 0;
                     foreach (Message m in l.Messages)
 					{
 //						Debug.Log("\t"+m.Name);
 						GameObject message = (GameObject)Instantiate(goMessage, new Vector3(this.scale(m.PtStartX),this.scale(m.PtEndY),0), Quaternion.identity);
 						message.transform.localScale = new Vector3(this.scale(m.Width),0.15f,0.2f);
 						message.name = m.Name;
+                        message.GetComponent<Renderer>().material.DOFade(0, 0);
 
 						GameObject txtMsg = new GameObject(m.Name);
 						txtMsg.name = "Text";
@@ -73,7 +77,7 @@ public class SequenceDiagram : MonoBehaviour {
 						message.transform.parent = lifeline.transform;
 						txtMsg.transform.parent = message.transform;
 
-						this.Messages.Add(m,message);
+                        this.Messages.Add(m,message);
 					}
 					this.Lifelines.Add(l,lifeline);
 				}
@@ -82,10 +86,27 @@ public class SequenceDiagram : MonoBehaviour {
 		}
 		this.directionArrow();
 		this.renderClassDiagram();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        myanimation(Messages);
+    }
+
+
+    void myanimation(Dictionary<Message, GameObject> allmessages)
+    {
+        //yield return new WaitForSeconds(0);
+
+        int i = 0;
+        foreach (KeyValuePair<Message, GameObject> msg in allmessages)
+        {
+            DG.Tweening.Sequence s = DOTween.Sequence();
+            s.Append(msg.Value.GetComponent<Renderer>().material.DOFade(1, .5f));
+            s.SetDelay(i * 0.5f);
+            i++;
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update () {
 		movementCamera ();
 	}
 
