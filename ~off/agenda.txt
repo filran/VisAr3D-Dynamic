@@ -21,7 +21,8 @@ OK Controlar animação com botões
 
 06/04/2016
 OK Controlar animação com vários objetos animando
-
+Animar Câmera em relação ao diagrama
+	Animar Câmera
 
 
 Exibição do código-fonte
