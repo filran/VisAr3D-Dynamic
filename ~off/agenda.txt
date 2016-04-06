@@ -19,6 +19,8 @@ Controle do fluxo de animação
 OK Animação com Update e posicionamento com TransformPoint 
 OK Controlar animação com botões
 
+06/04/2016
+OK Controlar animação com vários objetos animando
 
 
 
