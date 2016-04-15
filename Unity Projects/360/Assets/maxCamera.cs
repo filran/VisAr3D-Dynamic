@@ -4,6 +4,11 @@
 // original: http://www.unifycommunity.com/wiki/index.php?title=MouseOrbitZoom
 //
 // --01-18-2010 - create temporary target, if none supplied at start
+
+//---------WARNING--------------
+//@filran indicate change lines
+//------------------------------
+
  
 using UnityEngine;
 using System.Collections;
@@ -33,7 +38,7 @@ public class maxCamera : MonoBehaviour
     private Quaternion desiredRotation;
     private Quaternion rotation;
     private Vector3 position;
- 
+
     void Start() { Init(); }
     void OnEnable() { Init(); }
  
@@ -60,6 +65,14 @@ public class maxCamera : MonoBehaviour
         xDeg = Vector3.Angle(Vector3.right, transform.right );
         yDeg = Vector3.Angle(Vector3.up, transform.up );
     }
+
+    void Update()
+    {
+        //@filran
+        //target.transform.position = new Vector3(gameObject.GetComponent<CharacterController>().transform.localRotation.y, target.transform.position.y, target.transform.position.z);
+        //target.transform.position = Vector3.back * Time.deltaTime * 0.5f;
+        Debug.Log("Y Rotation: " + gameObject.GetComponent<CharacterController>().transform.localRotation.y);
+    }
  
     /*
      * Camera logic on LateUpdate to only update after all character movement logic has been handled. 
@@ -70,6 +83,10 @@ public class maxCamera : MonoBehaviour
         if (Input.GetMouseButton(2) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKey(KeyCode.LeftControl))
         {
             desiredDistance -= Input.GetAxis("Mouse Y") * Time.deltaTime * zoomRate*0.125f * Mathf.Abs(desiredDistance);
+
+            //@filran
+            //update target position
+            //target.transform.position = new Vector3(target.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
         // If middle mouse and left alt are selected? ORBIT
         else if (Input.GetMouseButton(2) && Input.GetKey(KeyCode.LeftAlt))

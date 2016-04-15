@@ -19,6 +19,11 @@ limitations under the License.
 
 ************************************************************************************/
 
+//---------WARNING--------------
+//@filran indicate change lines
+//------------------------------
+
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -96,8 +101,8 @@ public class OVRPlayerController : MonoBehaviour
 
 	void Start()
 	{
-		// Add eye-depth as a camera offset from the player controller
-		var p = CameraRig.transform.localPosition;
+        // Add eye-depth as a camera offset from the player controller
+        var p = CameraRig.transform.localPosition;
 		p.z = OVRManager.profile.eyeDepth;
 		CameraRig.transform.localPosition = p;
 	}
@@ -145,7 +150,10 @@ public class OVRPlayerController : MonoBehaviour
 
 	protected virtual void Update()
 	{
-		if (useProfileData)
+        //@filran
+        //Debug.Log("Y Rotation: " + gameObject.GetComponent<CharacterController>().transform.localRotation.y);
+
+        if (useProfileData)
 		{
 			if (InitialPose == null)
 			{
@@ -195,10 +203,10 @@ public class OVRPlayerController : MonoBehaviour
 		else
 			FallSpeed += ((Physics.gravity.y * (GravityModifier * 0.002f)) * SimulationRate * Time.deltaTime);
 
-		moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
+        moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
 
-		// Offset correction for uneven ground
-		float bumpUpOffset = 0.0f;
+        // Offset correction for uneven ground
+        float bumpUpOffset = 0.0f;
 
         if (Controller.isGrounded && MoveThrottle.y <= transform.lossyScale.y * 0.001f)
 		{
@@ -208,14 +216,14 @@ public class OVRPlayerController : MonoBehaviour
 
 		Vector3 predictedXZ = Vector3.Scale((Controller.transform.localPosition + moveDirection), new Vector3(1, 0, 1));
 
-		// Move contoller
-		Controller.Move(moveDirection);
+        // Move contoller
+        Controller.Move(moveDirection);
 
-		Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
+        Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
 
 		if (predictedXZ != actualXZ)
 			MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
-	}
+    }
 
 	public virtual void UpdateMovement()
 	{
