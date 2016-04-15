@@ -23,7 +23,13 @@ namespace Core {
         public string Id { get; set; }
         public string Visibility { get; set; }
         public string IdPackage { get; set; }
+
         public string Geometry { get; set; }
+        public string Left { get; set; }
+        public string Top { get; set; }
+        public string Right { get; set; }
+        public string Bottom { get; set; }
+
         public string Subject { get; set; }
         public string Seqno { get; set; }
         public string Style { get; set; }

@@ -113,6 +113,7 @@ namespace ParserXMI {
 
                     case "geometry":
                         n.Geometry = att.Value;
+                        BreakGeometry(att.Value, n);
                         break;
 
                     case "subject":
@@ -136,6 +137,47 @@ namespace ParserXMI {
                         break;
                 }
             }
+        }
+
+        private void BreakGeometry(string geometry , IXmlNode n)
+        {
+            char[] char1 = { ';' };
+            char[] char2 = { '=' };
+            string[] geo1 = geometry.Split(char1);
+
+            foreach(string g in geo1)
+            {
+                //Debug.Log(g);
+                string[] geo2 = g.Split(char2);
+
+                if(geo2.Length > 1)
+                {
+                    Debug.Log(geo2[0] + " " + geo2[1]);
+
+                    switch (geo2[0])
+                    {
+                        case "Left":
+                            Debug.Log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
+                            n.Left = geo2[1];
+                            break;
+
+                        case "Top":
+                            n.Top = geo2[1];
+                            break;
+
+                        case "Right":
+                            n.Right = geo2[1];
+                            break;
+
+                        case "Bottom":
+                            n.Bottom = geo2[1];
+                            break;
+                    
+                    }
+                }
+            }
+
+
         }
 
 
@@ -237,6 +279,19 @@ namespace ParserXMI {
                     }
                 }
             }
+
+
+            if(node.Name == "element" && node.ParentNode.Name == "elements" && node.ParentNode.ParentNode.Name == "diagram")
+            {
+                foreach (IXmlNode n in Classes)
+                {
+                    if(node.Attributes["subject"].Value == n.Id)
+                    {
+                        AddAttributes(node , n);
+                    }
+                }
+            }
+
         }
 
 

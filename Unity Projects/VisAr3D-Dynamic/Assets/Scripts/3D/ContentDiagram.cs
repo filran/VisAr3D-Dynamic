@@ -65,11 +65,14 @@ public class ContentDiagram : MonoBehaviour {
                 foreach(Class c in classdiagram.SoftwareEntities)
                 {
                     GameObject go_class = (GameObject)Instantiate(Class,new Vector3(x,0,0),Quaternion.identity);
+                    go_class.gameObject.name = c.Name;
                     go_class.AddComponent<OpenCode>();
                     Transform text = go_class.transform.FindChild("classname");
                     text.GetComponent<TextMesh>().text = c.Name;
+                    text.name = c.Name;
                     Classes.Add(c,go_class);
                     x += dist_x;
+                    Debug.Log("Geometry: " + c.Name + " - " + c.Geometry + "\n:"+c.Left+" - "+c.Top+" - "+c.Right+" - "+c.Bottom);
                 }
 
                 //create relationships
@@ -84,6 +87,7 @@ public class ContentDiagram : MonoBehaviour {
                         //{
                         //LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
                             GameObject line = new GameObject("Line Renderer");
+                            line.name = c.Value.name ;
                             Dictionary<GameObject, GameObject> pairs = new Dictionary<GameObject, GameObject>();
                             pairs.Add(c.Value , FindClasses(r.Value));
                             LineRenderes.Add(line.AddComponent<LineRenderer>(), pairs );
