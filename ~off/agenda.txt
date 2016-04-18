@@ -1,0 +1,30 @@
+ANDAMENTO DA PESQUISA
+
+OK Revisão da literatura
+OK Pesquisas sobre sobrecarga cognitiva em compreensão de programas
+OK Renderização de diagramas
+OK Animação do fluxo de mensagens
+OK Modelos comportamentais complexos da execução do software
+OK Integração com Oculus Rift
+Arquitetura MVC para renderização de modelos UML 3D
+Relacionamento com outros diagramas
+Animação sincronizada entre diagramas de classe e de sequência
+
+
+--------------------------------------------
+Controle do fluxo de animação
+--------------------------------------------
+
+05/04/2016
+OK Animação com Update e posicionamento com TransformPoint 
+OK Controlar animação com botões
+
+06/04/2016
+OK Controlar animação com vários objetos animando
+Animar Câmera em relação ao diagrama
+	Animar Câmera
+
+
+Exibição do código-fonte
+Utilização de métricas dinâmicas como indicativos visuais
+Modelagem 3D
