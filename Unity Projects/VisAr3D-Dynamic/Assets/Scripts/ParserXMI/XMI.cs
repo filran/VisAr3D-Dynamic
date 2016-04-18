@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////
 
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -22,7 +23,8 @@ namespace ParserXMI {
         public List<IXmlNode> Diagrams { get; private set; }
         public List<IXmlNode> Classes { get; private set; }
         public List<IXmlNode> Relationships { get; private set; }
-        
+        public List<IXmlNode> Lifelines { get; private set; }
+
         public XMI(string url)
         {
             ParserXMI = new XmlDocument();
@@ -34,6 +36,7 @@ namespace ParserXMI {
                 Diagrams = new List<IXmlNode>();
                 Classes = new List<IXmlNode>();
                 Relationships = new List<IXmlNode>();
+                Lifelines = new List<IXmlNode>();
 
                 ReadNodes(ParserXMI.DocumentElement);
                 FilterPackages();
@@ -63,12 +66,16 @@ namespace ParserXMI {
 
                 BuildDiagram(n);
 
+                //TO CLASS
                 BuildClass(n);
                 BuildClassElement(n);
-
                 BuildRelationshipPackagedElement(n);
                 BuildRelationshipLink(n);
                 BuildRelationshipConnector(n);
+
+                //TO LIFELINE
+                BuildLifeline(n);
+                BuildLifelineElement(n);
 
                 ReadNodes(n);
             }
@@ -98,6 +105,10 @@ namespace ParserXMI {
 
                     case "name":
                         n.Name = att.Value;
+                        break;
+
+                    case "represents":
+                        n.Represents = att.Value;
                         break;
 
                     case "visibility":
@@ -153,25 +164,25 @@ namespace ParserXMI {
 
                 if(geo2.Length > 1)
                 {
-                    Debug.Log(geo2[0] + " " + geo2[1]);
+                    //Debug.Log(geo2[0] + " " + geo2[1]);
 
                     switch (geo2[0])
                     {
                         case "Left":
-                            Debug.Log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
-                            n.Left = "-------------" + geo2[1];
+                            //Debug.Log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
+                            n.Left = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
 
                         case "Top":
-                            n.Top = "-------------" + geo2[1];
+                            n.Top = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
 
                         case "Right":
-                            n.Right = "-------------" + geo2[1];
+                            n.Right = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
 
                         case "Bottom":
-                            n.Bottom = "-------------" + geo2[1];
+                            n.Bottom = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
                     
                     }
@@ -243,6 +254,8 @@ namespace ParserXMI {
             }
         }
 
+
+        //TO CLASS
         private void BuildClass(XmlNode node)
         {
             if (node.Name == "packagedElement" && node.Attributes["xmi:type"].Value == "uml:Class" )
@@ -311,7 +324,6 @@ namespace ParserXMI {
             }
 
         }
-
 
         private void BuildRelationshipPackagedElement(XmlNode node)
         {
@@ -397,6 +409,33 @@ namespace ParserXMI {
                 }
             }
         }
+
+
+        //TO LIFELINE
+        private void BuildLifeline(XmlNode node)
+        {
+            if(node.Name == "lifeline")
+            {
+                IXmlNode n = new Lifeline();
+                AddAttributes(node, n);
+                Lifelines.Add(n);
+            }
+        }
+
+        private void BuildLifelineElement(XmlNode node)
+        {
+            if (node.Name == "element" && node.ParentNode.Name == "elements" && node.ParentNode.ParentNode.Name == "diagram")
+            {
+                foreach(IXmlNode l in Lifelines)
+                {
+                    if(node.Attributes["subject"].Value == l.Id)
+                    {
+                        AddAttributes(node , l);
+                    }
+                }
+            }
+        }
+
 
         private List<IXmlNode> Clone(List<IXmlNode> c)
         {

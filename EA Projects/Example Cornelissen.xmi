@@ -5981,16 +5981,6 @@
 		</primitivetypes>
 		<profiles/>
 		<diagrams>
-			<diagram xmi:id="EAID_6C553FE8_D3A4_4a30_9BE9_30D2102F5C3E">
-				<model package="EAPK_0ED794B0_6760_425c_809C_AF0DF8ACA988" localID="1" owner="EAPK_0ED794B0_6760_425c_809C_AF0DF8ACA988"/>
-				<properties name="Dynamic View" type="InteractionOverview"/>
-				<project version="1.0" created="2016-02-03 10:14:13" modified="2016-02-03 10:14:13"/>
-				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=0;HighlightForeign=0;PackageContents=0;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="SaveTag=5F64F157;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=0;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;"/>
-				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=-1;ofCol=-1;hl=1;cls=0;"/>
-				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;"/>
-				<extendedProperties/>
-			</diagram>
 			<diagram xmi:id="EAID_C5D30B34_0645_46a3_95D3_A92E2696E07F">
 				<model package="EAPK_0ED794B0_6760_425c_809C_AF0DF8ACA988" localID="2" owner="EAPK_0ED794B0_6760_425c_809C_AF0DF8ACA988"/>
 				<properties name="Dynamic View" type="Sequence"/>

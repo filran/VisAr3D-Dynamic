@@ -29,33 +29,42 @@ namespace Core {
 
             AddPackages();
             AddDiagramsToPackages();
+
             AddClassesToDiagrams();
             AddRelationshipsToClassDiagrams();
-		}
+
+            AddLifelinesToDiagrams();
+
+        }
 
         //TROCA DE VALROES ENTRE AS CLASSES
-        public IXmlNode InterchangeClass(IXmlNode oldclass, IXmlNode newclass)
+        public IXmlNode InterchangeSoftwareEntity(IXmlNode old, IXmlNode entity)
         {
-            newclass.ChildNodes = oldclass.ChildNodes;
-            newclass.EA_Type = oldclass.EA_Type;
-            newclass.Aggregation = oldclass.Aggregation;
-            newclass.End = oldclass.End;
-            newclass.Geometry = oldclass.Geometry;
-            newclass.Id = oldclass.Id;
-            newclass.IdPackage = oldclass.IdPackage;
-            newclass.IdSource = oldclass.IdSource;
-            newclass.IdTarget = oldclass.IdTarget;
-            newclass.IsAbstract = oldclass.IsAbstract;
-            newclass.Name = oldclass.Name;
-            newclass.Seqno = oldclass.Seqno;
-            newclass.Start = oldclass.Start;
-            newclass.Style = oldclass.Style;
-            newclass.Subject = oldclass.Subject;
-            newclass.Tag = oldclass.Tag;
-            newclass.Type = oldclass.Type;
-            newclass.Visibility = oldclass.Visibility;
+            entity.ChildNodes = old.ChildNodes;
+            entity.EA_Type = old.EA_Type;
+            entity.Aggregation = old.Aggregation;
+            entity.End = old.End;
+            entity.Geometry = old.Geometry;
+            entity.Left = old.Left;
+            entity.Top = old.Top;
+            entity.Right = old.Right;
+            entity.Bottom = old.Bottom;
+            entity.Id = old.Id;
+            entity.IdPackage = old.IdPackage;
+            entity.IdSource = old.IdSource;
+            entity.IdTarget = old.IdTarget;
+            entity.IsAbstract = old.IsAbstract;
+            entity.Name = old.Name;
+            entity.Seqno = old.Seqno;
+            entity.Start = old.Start;
+            entity.Style = old.Style;
+            entity.Subject = old.Subject;
+            entity.Tag = old.Tag;
+            entity.Type = old.Type;
+            entity.Visibility = old.Visibility;
+            entity.Represents = old.Represents;
 
-            return newclass;
+            return entity;
         }
 
         private void AddPackages()
@@ -76,11 +85,33 @@ namespace Core {
                     {
                         if(d.Type == "Logical")
                         {
-                            p.ClassDiagrams.Add(InterchangeClass(d,new ClassDiagram()));
+                            p.ClassDiagrams.Add(InterchangeSoftwareEntity(d,new ClassDiagram()));
                         }
                         else if (d.Type == "Sequence")
                         {
-                            p.SequenceDiagrams.Add(InterchangeClass(d, new SequenceDiagram()));
+                            p.SequenceDiagrams.Add(InterchangeSoftwareEntity(d, new SequenceDiagram()));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void AddLifelinesToDiagrams()
+        {
+            foreach(Package p in Packages)
+            {
+                foreach(SequenceDiagram d in p.SequenceDiagrams)
+                {
+                    foreach(IXmlNode e in d.ChildNodes)
+                    {
+                        foreach(IXmlNode l in TheXMI.Lifelines)
+                        {
+                            if(e.Subject == l.Id)
+                            {
+                                //Debug.Log("Lifeline: " + l.Id + " " + l.Name);
+                                Lifeline thelifeline = new Lifeline();
+                                d.SoftwareEntities.Add(InterchangeSoftwareEntity(l,thelifeline));
+                            }
                         }
                     }
                 }
@@ -117,7 +148,7 @@ namespace Core {
                                 theclass.Seqno = e.Seqno;
                                 theclass.Style = e.Style;
 
-                                d.SoftwareEntities.Add(InterchangeClass(c, theclass));
+                                d.SoftwareEntities.Add(InterchangeSoftwareEntity(c, theclass));
                             }
                         }
                     }
@@ -152,23 +183,23 @@ namespace Core {
                                         if(r.Aggregation == "shared") //agregacao
                                         {
                                             Relationship rr = new Aggregation();
-                                            c.AddRelationshipWith(InterchangeClass(r, rr), r.FindById(d.SoftwareEntities, r.IdTarget));
+                                            c.AddRelationshipWith(InterchangeSoftwareEntity(r, rr), r.FindById(d.SoftwareEntities, r.IdTarget));
                                         }
                                         else if(r.Aggregation == "composite") //composicao
                                         {
                                             Relationship rr = new Composition();
-                                            c.AddRelationshipWith(InterchangeClass(r, rr), r.FindById(d.SoftwareEntities, r.IdTarget));
+                                            c.AddRelationshipWith(InterchangeSoftwareEntity(r, rr), r.FindById(d.SoftwareEntities, r.IdTarget));
                                         }
                                         break;
 
                                     case "Association":
                                             Relationship rrr = new Association();
-                                            c.AddRelationshipWith(InterchangeClass(r, rrr), r.FindById(d.SoftwareEntities, r.IdTarget));
+                                            c.AddRelationshipWith(InterchangeSoftwareEntity(r, rrr), r.FindById(d.SoftwareEntities, r.IdTarget));
                                         break;
 
                                     case "Generalization":
                                             Relationship rrrr = new Generalization();
-                                            c.AddRelationshipWith(InterchangeClass(r, rrrr), r.FindById(d.SoftwareEntities, r.IdTarget));
+                                            c.AddRelationshipWith(InterchangeSoftwareEntity(r, rrrr), r.FindById(d.SoftwareEntities, r.IdTarget));
                                         break;
                                 }
                             }

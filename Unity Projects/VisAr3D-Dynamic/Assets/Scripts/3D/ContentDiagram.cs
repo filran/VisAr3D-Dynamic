@@ -5,16 +5,26 @@ using Core;
 
 public class ContentDiagram : MonoBehaviour {
 
+    //Class
     public GameObject Class;
     public Material lineMaterial;
+
+    //Sequence
+    public GameObject Lifeline;
+
     public string dirsourcecode;
 
     private TheCore Core { get; set; }
-    private ClassDiagram TheClassDidagram { get; set; }
+    private ClassDiagram TheClassDiagram { get; set; }
     private SequenceDiagram TheSequenceDiagram { get; set; }
+
+    //Classes
     private Dictionary<Class,GameObject> Classes { get; set; } //key:class value:class like gameobject
                                                  //origin    destination
     private Dictionary< LineRenderer , Dictionary<GameObject,GameObject> > LineRenderes = new Dictionary<LineRenderer, Dictionary<GameObject, GameObject>>();
+
+    //Lifelines
+    private Dictionary<Lifeline , GameObject> Lifelines { get; set; }
 
     private float x = 0;
     private float y = 0;
@@ -25,7 +35,7 @@ public class ContentDiagram : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Debug.Log("IdDiagram: "+PlayerPrefs.GetString("IdDiagram"));
+        //Debug.Log("IdDiagram: "+PlayerPrefs.GetString("IdDiagram"));
 
         Core = new TheCore(PlayerPrefs.GetString("XMIFile"));
 
@@ -40,13 +50,17 @@ public class ContentDiagram : MonoBehaviour {
                     //Debug.Log("Diagram de classe "+diagram.Name+" id:"+diagram.Id);
                     BuildClassDiagram(diagram);
                     break;
+
+                case "Sequence":
+                    BuildSequenceDiagram(diagram);
+                    break;
             }
         }
     
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         updateLineRenderer();
     }
 
@@ -114,6 +128,38 @@ public class ContentDiagram : MonoBehaviour {
         }
     }
 
+
+    void BuildSequenceDiagram(IXmlNode diagram)
+    {
+        Debug.Log(diagram.Type + " Diagram, Id:" + diagram.Id + ", name:" + diagram.Name);
+
+        Package package = (Package)Core.FindById(Core.Packages, diagram.IdPackage);
+        if (package.Id != null)
+        {
+            SequenceDiagram sequencediagram = (SequenceDiagram)package.FindById(package.SequenceDiagrams, diagram.Id);
+            if (sequencediagram.Id != null)
+            {
+                Lifelines = new Dictionary<Lifeline, GameObject>();
+
+                foreach (Lifeline l in sequencediagram.SoftwareEntities)
+                {
+                    GameObject go_lifeline = (GameObject)Instantiate(Lifeline, new Vector3(scale(l.Left), 0, 0), Quaternion.identity);
+                    go_lifeline.gameObject.name = l.Name;
+                    Transform text = go_lifeline.transform.FindChild("lifeline_name");
+                    text.GetComponent<TextMesh>().text = l.Name;
+
+                    //go_class.gameObject.name = c.Name;
+                    //go_class.AddComponent<OpenCode>();
+                    //Transform text = go_class.transform.FindChild("classname");
+                    //text.GetComponent<TextMesh>().text = c.Name;
+                    //text.name = c.Name;
+                    //Classes.Add(c, go_class);
+                }
+            }
+        }
+    }
+
+
     GameObject FindClasses(IXmlNode c)
     {
         GameObject g = new GameObject("FindClasses");
@@ -126,5 +172,10 @@ public class ContentDiagram : MonoBehaviour {
             }
         }
         return g;
+    }
+
+    private float scale(float n)
+    {
+        return n * 0.19f * 0.1f;
     }
 }
