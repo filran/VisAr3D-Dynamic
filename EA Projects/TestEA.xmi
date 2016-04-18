@@ -7,10 +7,10 @@
 				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_9D709F50_35A8_45d4_8BC1_95048EF9C857" body="Class libraries, API's and other re-usable components">
 					<annotatedElement xmi:idref="EAPK_5592153E_52BC_4dcb_9B35_48C645208444"/>
 				</ownedComment>
-				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_65E85085_7036_4fa2_AD98_3699049C6893" body="EClasss, interfaces and logical components for the new system">
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_65E85085_7036_4fa2_AD98_3699049C6893" body="Classes, interfaces and logical components for the new system">
 					<annotatedElement xmi:idref="EAPK_B2FE2661_E468_4df7_9EEE_780BC6E779E0"/>
 				</ownedComment>
-				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_3C677E4E_FBDF_4408_BBD5_B50D55B65AF6" body="The Class Model is a logical model of the software system under construction. EClasss generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the EClasss and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains EClasss and components that have been designed and built earlier and are being reused as part of the current project."/>
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_3C677E4E_FBDF_4408_BBD5_B50D55B65AF6" body="The Class Model is a logical model of the software system under construction. Classes generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the classes and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains classes and components that have been designed and built earlier and are being reused as part of the current project."/>
 				<packagedElement xmi:type="uml:Class" xmi:id="EAID_A84BC378_3BA9_4792_8E32_833334676649" name="$help://class_model_pattern.htm" visibility="public"/>
 				<packagedElement xmi:type="uml:Class" xmi:id="EAID_D296BF4F_DB65_4c9d_A4C0_B8FC8582785A" name="$help://classdiagram.htm" visibility="public"/>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_B2FE2661_E468_4df7_9EEE_780BC6E779E0" name="System" visibility="public">
@@ -151,7 +151,7 @@
 			</element>
 			<element xmi:idref="EAID_3C677E4E_FBDF_4408_BBD5_B50D55B65AF6" xmi:type="uml:Note" name="Note" scope="public">
 				<model package="EAPK_7A6620DE_F951_45fa_966F_B9BAB57CC419" tpos="0" ea_localid="48" ea_eleType="element" name="Note"/>
-				<properties documentation="The Class Model is a logical model of the software system under construction. EClasss generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the EClasss and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains EClasss and components that have been designed and built earlier and are being reused as part of the current project." isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<properties documentation="The Class Model is a logical model of the software system under construction. Classes generally have a direct relationship to source code or other software artifacts that can be grouped together into executable components. &#xA;&#xA;The System package contains the classes and artifacts which are being built or designed as part of the current model. The Frameworks package generally contains classes and components that have been designed and built earlier and are being reused as part of the current project." isSpecification="false" sType="Note" nType="0" scope="public"/>
 				<project version="1.0" phase="1.0" created="2016-03-07 13:34:39" modified="2016-03-07 13:34:39" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
@@ -161,7 +161,7 @@
 			</element>
 			<element xmi:idref="EAID_65E85085_7036_4fa2_AD98_3699049C6893" xmi:type="uml:Note" scope="public">
 				<model package="EAPK_7A6620DE_F951_45fa_966F_B9BAB57CC419" tpos="0" ea_localid="47" ea_eleType="element"/>
-				<properties documentation="EClasss, interfaces and logical components for the new system" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<properties documentation="Classes, interfaces and logical components for the new system" isSpecification="false" sType="Note" nType="0" scope="public"/>
 				<project version="1.0" phase="1.0" created="2016-03-07 13:34:39" modified="2016-03-07 13:34:39" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
@@ -314,7 +314,7 @@
 			<element xmi:idref="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" xmi:type="uml:Class" name="AClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="14" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:05" modified="2016-03-07 15:39:29" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:05" modified="2016-03-17 11:16:54" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -328,7 +328,7 @@
 			<element xmi:idref="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" xmi:type="uml:Class" name="BClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="15" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:13" modified="2016-03-07 10:11:17" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:13" modified="2016-03-17 11:16:58" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -341,7 +341,7 @@
 			<element xmi:idref="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38" xmi:type="uml:Class" name="CClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="16" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:30" modified="2016-03-07 10:11:33" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:11:30" modified="2016-03-17 11:17:07" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -355,7 +355,7 @@
 			<element xmi:idref="EAID_F5EB71F5_E679_4810_A292_8B34D229D800" xmi:type="uml:Class" name="DClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="17" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:12:12" modified="2016-03-07 10:12:16" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:12:12" modified="2016-03-17 11:17:10" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -370,7 +370,7 @@
 			<element xmi:idref="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" xmi:type="uml:Class" name="EClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="18" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:12:25" modified="2016-03-07 10:12:28" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:12:25" modified="2016-03-17 11:17:16" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -384,7 +384,7 @@
 			<element xmi:idref="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04" xmi:type="uml:Class" name="FClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="20" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:13:03" modified="2016-03-07 10:13:07" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:13:03" modified="2016-03-17 11:17:20" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -397,7 +397,7 @@
 			<element xmi:idref="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10" xmi:type="uml:Sequence" name="AClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="41" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Sequence" nType="0" scope="public"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:12" modified="2016-03-07 10:20:15" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:12" modified="2016-03-17 11:17:27" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -412,7 +412,7 @@
 			<element xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0" xmi:type="uml:Sequence" name="BClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="42" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Sequence" nType="0" scope="public"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:18" modified="2016-03-07 10:20:24" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:18" modified="2016-03-17 11:17:30" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -428,7 +428,7 @@
 			<element xmi:idref="EAID_21F4216B_4EB2_45ea_BF1A_81A4A71D9A62" xmi:type="uml:Sequence" name="CClass" scope="public">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" tpos="0" ea_localid="43" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Sequence" nType="0" scope="public"/>
-				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:27" modified="2016-03-07 10:20:31" complexity="1" status="Proposed"/>
+				<project author="hercules" version="1.0" phase="1.0" created="2016-03-07 10:20:27" modified="2016-03-17 11:17:34" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -1042,20 +1042,19 @@
 			<diagram xmi:id="EAID_8CD0CDD3_9863_4c3a_BAC2_D47FE5CC7E04">
 				<model package="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441" localID="1" owner="EAPK_979416D1_4137_41f3_9F66_BEAD76FBC441"/>
 				<properties name="classdiagram" type="Logical"/>
-				<project author="hercules" version="1.0" created="2016-03-07 10:10:05" modified="2016-03-14 10:05:48"/>
-				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=0;HighlightForeign=0;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=113;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.0;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.0;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=C6198812;"/>
+				<project author="hercules" version="1.0" created="2016-03-07 10:10:05" modified="2016-03-17 13:21:37"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=0;HighlightForeign=0;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.0;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.0;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=9B798C96;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=-1;ofCol=-1;hl=1;cls=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;"/>
 				<extendedProperties/>
 				<elements>
-					<element geometry="Left=680;Top=171;Right=770;Bottom=241;" subject="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04" seqno="1" style="DUID=03F7DF17;"/>
-					<element geometry="Left=628;Top=115;Right=838;Bottom=284;" subject="EAID_43D85C2A_F0D2_4511_9136_2AF83F78A9DA" seqno="2" style=" DUID=C6C270CA;"/>
-					<element geometry="Left=628;Top=328;Right=718;Bottom=398;" subject="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" seqno="3" style="DUID=FA87689F;"/>
-					<element geometry="Left=444;Top=332;Right=534;Bottom=402;" subject="EAID_F5EB71F5_E679_4810_A292_8B34D229D800" seqno="4" style="DUID=1BD1392B;"/>
-					<element geometry="Left=443;Top=186;Right=533;Bottom=256;" subject="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38" seqno="5" style="DUID=BDD201EC;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=205;Top=335;Right=295;Bottom=405;" subject="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" seqno="6" style="DUID=B290EAFE;"/>
-					<element geometry="Left=224;Top=183;Right=314;Bottom=253;" subject="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" seqno="7" style="DUID=F1DFD6F5;"/>
+					<element geometry="Left=563;Top=167;Right=653;Bottom=237;" subject="EAID_0642F47E_7365_409d_8A2A_D682EBAC6C04" seqno="1" style="DUID=03F7DF17;"/>
+					<element geometry="Left=511;Top=324;Right=601;Bottom=394;" subject="EAID_CC28FDD5_A147_4f12_A1AB_0843634DA643" seqno="2" style="DUID=FA87689F;"/>
+					<element geometry="Left=327;Top=328;Right=417;Bottom=398;" subject="EAID_F5EB71F5_E679_4810_A292_8B34D229D800" seqno="3" style="DUID=1BD1392B;"/>
+					<element geometry="Left=326;Top=182;Right=416;Bottom=252;" subject="EAID_75F51133_37DF_46d8_A58C_B6495A9DDD38" seqno="4" style="DUID=BDD201EC;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=88;Top=331;Right=178;Bottom=401;" subject="EAID_A24494B3_C10B_429a_B7F0_B0703286E405" seqno="5" style="DUID=B290EAFE;"/>
+					<element geometry="Left=107;Top=179;Right=197;Bottom=249;" subject="EAID_AFD34DB5_253F_42f2_9819_E489243D89D6" seqno="6" style="DUID=F1DFD6F5;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_98C99CC4_D329_45d0_BE17_6D40FE425D77" style="Mode=3;EOID=03F7DF17;SOID=FA87689F;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A89A7E78_B1D4_472f_8E29_E072141FA156" style="Mode=3;EOID=1BD1392B;SOID=FA87689F;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_05CAF6E5_B81E_40ca_AFEC_4D6E4AF9EEC2" style="Mode=3;EOID=BDD201EC;SOID=1BD1392B;Color=-1;LWidth=0;Hidden=0;"/>

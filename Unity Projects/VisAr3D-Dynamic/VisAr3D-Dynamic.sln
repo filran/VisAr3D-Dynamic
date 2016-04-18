@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisAr3D-Dynamic.CSharp", "VisAr3D-Dynamic.CSharp.csproj", "{71E86A8F-2758-5FBA-9A69-4629C781F251}"
 EndProject
 Global
