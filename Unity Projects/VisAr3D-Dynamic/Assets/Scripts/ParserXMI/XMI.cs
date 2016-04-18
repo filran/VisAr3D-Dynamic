@@ -36,6 +36,7 @@ namespace ParserXMI {
                 Relationships = new List<IXmlNode>();
 
                 ReadNodes(ParserXMI.DocumentElement);
+                FilterPackages();
             }
         }
 
@@ -183,15 +184,14 @@ namespace ParserXMI {
 
         private void BuildPackage(XmlNode node)
         {
-            if (node.Name == "packagedElement" && node.ParentNode.ParentNode.Name == "uml:Model")
+            if (node.Name == "packagedElement" /*&& node.ParentNode.ParentNode.Name == "uml:Model"*/)
             {
                 IXmlNode n = new Package();
                 AddAttributes(node, n);
                 Packages.Add(n);
             }
-        }   
-
-
+        } 
+  
         private void BuildDiagram(XmlNode node)
         {
             if(node.Name == "diagram")
@@ -222,6 +222,24 @@ namespace ParserXMI {
                     }
                 }
                 Diagrams.Add(n);
+            }
+        }
+
+        //remove os pacotes que não estão associados aos diagramas
+        private void FilterPackages()
+        {
+            List<IXmlNode> tempPack = Clone(Packages);
+            Packages.Clear();
+
+            foreach (IXmlNode d in Diagrams)
+            {
+                foreach( IXmlNode tp in tempPack )
+                {
+                    if(d.IdPackage == tp.Id)
+                    {
+                        Packages.Add(tp);
+                    }
+                }
             }
         }
 
@@ -378,6 +396,16 @@ namespace ParserXMI {
                     }
                 }
             }
+        }
+
+        private List<IXmlNode> Clone(List<IXmlNode> c)
+        {
+            List<IXmlNode> clone = new List<IXmlNode>();
+            foreach(IXmlNode cc in c)
+            {
+                clone.Add(cc);
+            }
+            return clone;
         }
 
 		~XMI(){
