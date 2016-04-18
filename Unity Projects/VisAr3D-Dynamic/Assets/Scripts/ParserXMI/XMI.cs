@@ -158,19 +158,19 @@ namespace ParserXMI {
                     {
                         case "Left":
                             Debug.Log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
-                            n.Left = geo2[1];
+                            n.Left = "-------------" + geo2[1];
                             break;
 
                         case "Top":
-                            n.Top = geo2[1];
+                            n.Top = "-------------" + geo2[1];
                             break;
 
                         case "Right":
-                            n.Right = geo2[1];
+                            n.Right = "-------------" + geo2[1];
                             break;
 
                         case "Bottom":
-                            n.Bottom = geo2[1];
+                            n.Bottom = "-------------" + geo2[1];
                             break;
                     
                     }

@@ -72,7 +72,7 @@ public class ContentDiagram : MonoBehaviour {
                     text.name = c.Name;
                     Classes.Add(c,go_class);
                     x += dist_x;
-                    Debug.Log("Geometry: " + c.Name + " - " + c.Geometry + "\n:"+c.Left+" - "+c.Top+" - "+c.Right+" - "+c.Bottom);
+                    //Debug.Log("Geometry: " + c.Name + " - " + c.Geometry + "\n:"+c.Left+" - "+c.Top+" - "+c.Right+" - "+c.Bottom);
                 }
 
                 //create relationships
