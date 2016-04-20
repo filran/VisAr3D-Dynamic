@@ -27,7 +27,7 @@
 					</message>
 					<message xmi:type="uml:Message" xmi:id="EAID_1E5B0DC7_0831_4a3d_A1CC_561F8DD9E015" messageKind="complete" messageSort="reply" sendEvent="EAID_FR000001_4EB2_45ea_BF1A_81A4A71D9A62" receiveEvent="EAID_FR000003_24CA_4ebf_8F7C_0BED08FDE4F0"/>
 					<message xmi:type="uml:Message" xmi:id="EAID_1BBBF3BA_9479_40f7_8543_4617A87871CA" messageKind="complete" messageSort="reply" sendEvent="EAID_FR000001_24CA_4ebf_8F7C_0BED08FDE4F0" receiveEvent="EAID_FR000002_5F07_4d50_9A62_0ACD961AFC10"/>
-					<message xmi:type="uml:Message" xmi:id="EAID_ABDE1C4E_2809_415b_B7AF_E3209EBA8427" name="msg3" messageKind="complete" messageSort="asynchCall" sendEvent="EAID_FR000000_5F07_4d50_9A62_0ACD961AFC10" receiveEvent="EAID_FR000000_E679_4810_A292_8B34D229D800">
+					<message xmi:type="uml:Message" xmi:id="EAID_ABDE1C4E_2809_415b_B7AF_E3209EBA8427" name="msg3" messageKind="complete" messageSort="synchCall" sendEvent="EAID_FR000000_5F07_4d50_9A62_0ACD961AFC10" receiveEvent="EAID_FR000000_E679_4810_A292_8B34D229D800">
 						<argument xmi:type="uml:LiteralString" xmi:id="EAID_AR000000_2809_415b_B7AF_E3209EBA8427" name="d"/>
 					</message>
 				</ownedBehavior>
@@ -416,7 +416,7 @@
 				<documentation/>
 				<appearance linemode="1" linecolor="-1" linewidth="0" seqno="5" headStyle="0" lineStyle="0"/>
 				<labels mt="msg3(d)"/>
-				<extendedProperties stateflags="Activation=0;" virtualInheritance="0" diagram="EAID_40511BA7_B4F1_4edc_8143_96FBEB8D8E10" privatedata1="Asynchronous" privatedata2="retval=void;params=;paramsDlg=d;" privatedata3="Call" privatedata4="0" privatedata5="SX=0;SY=-19;EX=0;EY=0;$LLB=;LLT=;LMT=CX=37:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;" sequence_points="PtStartX=118;PtStartY=-364;PtEndX=641;PtEndY=-364;"/>
+				<extendedProperties stateflags="Activation=0;" virtualInheritance="0" diagram="EAID_40511BA7_B4F1_4edc_8143_96FBEB8D8E10" privatedata1="Synchronous" privatedata2="retval=void;params=;paramsDlg=d;" privatedata3="Call" privatedata4="0" privatedata5="SX=0;SY=-19;EX=0;EY=0;$LLB=;LLT=;LMT=CX=37:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;" sequence_points="PtStartX=118;PtStartY=-364;PtEndX=641;PtEndY=-364;"/>
 				<style/>
 				<xrefs/>
 				<tags/>
