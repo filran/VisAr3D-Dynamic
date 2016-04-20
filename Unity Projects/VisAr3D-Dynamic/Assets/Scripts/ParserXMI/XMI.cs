@@ -24,6 +24,7 @@ namespace ParserXMI {
         public List<IXmlNode> Classes { get; private set; }
         public List<IXmlNode> Relationships { get; private set; }
         public List<IXmlNode> Lifelines { get; private set; }
+        public List<IXmlNode> Messages { get; private set; }
 
         public XMI(string url)
         {
@@ -37,6 +38,7 @@ namespace ParserXMI {
                 Classes = new List<IXmlNode>();
                 Relationships = new List<IXmlNode>();
                 Lifelines = new List<IXmlNode>();
+                Messages = new List<IXmlNode>();
 
                 ReadNodes(ParserXMI.DocumentElement);
                 FilterPackages();
@@ -76,6 +78,7 @@ namespace ParserXMI {
                 //TO LIFELINE
                 BuildLifeline(n);
                 BuildLifelineElement(n);
+                BuildMessages(n);
 
                 ReadNodes(n);
             }
@@ -125,7 +128,7 @@ namespace ParserXMI {
 
                     case "geometry":
                         n.Geometry = att.Value;
-                        BreakGeometry(att.Value, n);
+                        BreakAttribute(att.Value, n);
                         break;
 
                     case "subject":
@@ -147,49 +150,86 @@ namespace ParserXMI {
                     case "end":
                         n.End = att.Value;
                         break;
+
+                    case "messageKind":
+                        n.MessageKind = att.Value;
+                        break;
+
+                    case "messageSort":
+                        n.MessageSort = att.Value;
+                        break;
+
+                    case "sendEvent":
+                        n.SendEvent = att.Value;
+                        break;
+
+                    case "receiveEvent":
+                        n.ReceiveEvent = att.Value;
+                        break;
+
+                    case "mt":
+                        n.Label = att.Value;
+                        break;
+
+                    case "sequence_points":
+                        n.Sequence_Points = att.Value;
+                        break;
                 }
             }
         }
 
-        private void BreakGeometry(string geometry , IXmlNode n)
+        private void BreakAttribute(string attr, IXmlNode n)
         {
             char[] char1 = { ';' };
             char[] char2 = { '=' };
-            string[] geo1 = geometry.Split(char1);
+            string[] a1 = attr.Split(char1);
 
-            foreach(string g in geo1)
+            foreach (string g in a1)
             {
                 //Debug.Log(g);
-                string[] geo2 = g.Split(char2);
+                string[] a2 = g.Split(char2);
 
-                if(geo2.Length > 1)
+                if (a2.Length > 1)
                 {
-                    //Debug.Log(geo2[0] + " " + geo2[1]);
+                    //Debug.Log(a2[0] + " " + a2[1]);
 
-                    switch (geo2[0])
+                    switch (a2[0])
                     {
                         case "Left":
                             //Debug.Log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
-                            n.Left = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            n.Left = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
 
                         case "Top":
-                            n.Top = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            n.Top = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
 
                         case "Right":
-                            n.Right = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            n.Right = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
 
                         case "Bottom":
-                            n.Bottom = float.Parse(geo2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            n.Bottom = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
                             break;
-                    
+
+                        case "PtStartX":
+                            n.PtStartX = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            break;
+
+                        case "PtStartY":
+                            n.PtStartY = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            break;
+
+                        case "PtEndX":
+                            n.PtEndX = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            break;
+
+                        case "PtEndY":
+                            n.PtEndY = float.Parse(a2[1], CultureInfo.InvariantCulture.NumberFormat);
+                            break;
                     }
                 }
             }
-
-
         }
 
 
@@ -433,6 +473,16 @@ namespace ParserXMI {
                         AddAttributes(node , l);
                     }
                 }
+            }
+        }
+
+        private void BuildMessages(XmlNode node)
+        {
+            if (node.Name == "message" && node.ParentNode.Name == "ownedBehavior")
+            {
+                IXmlNode n = new Method();
+                AddAttributes(node, n);
+                Messages.Add(n);
             }
         }
 

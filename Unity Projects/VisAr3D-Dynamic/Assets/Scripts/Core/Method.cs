@@ -14,7 +14,7 @@ using System.IO;
 
 
 namespace Core {
-	public class Method {
+	public class Method : IXmlNode{
 
 		public Method(){
 

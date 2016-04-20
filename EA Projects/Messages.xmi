@@ -1,0 +1,37 @@
+<message xmi:type="uml:Message" xmi:id="EAID_E7D5DDBD_A205_4556_8030_28FBA0F2FE93" name="msg1" messageKind="complete" messageSort="synchCall" sendEvent="EAID_FR000001_5F07_4d50_9A62_0ACD961AFC10" receiveEvent="EAID_FR000000_24CA_4ebf_8F7C_0BED08FDE4F0">
+
+<connector xmi:idref="EAID_E7D5DDBD_A205_4556_8030_28FBA0F2FE93">
+	<source xmi:idref="EAID_766073C8_5F07_4d50_9A62_0ACD961AFC10">
+		<model ea_localid="41" type="Sequence" name="AClass"/>
+		<role visibility="Public" targetScope="instance"/>
+		<type containment="Unspecified"/>
+		<constraints/>
+		<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+		<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+		<documentation/>
+		<xrefs/>
+		<tags/>
+	</source>
+	<target xmi:idref="EAID_2DB6C389_24CA_4ebf_8F7C_0BED08FDE4F0">
+		<model ea_localid="42" type="Sequence" name="BClass"/>
+		<role visibility="Public" targetScope="instance"/>
+		<type aggregation="none" containment="Unspecified"/>
+		<constraints/>
+		<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+		<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+		<documentation/>
+		<xrefs/>
+		<tags/>
+	</target>
+	<model ea_localid="22"/>
+	<properties name="msg1" ea_type="Sequence" direction="Source -&gt; Destination"/>
+	<documentation/>
+	<appearance linemode="1" linecolor="-1" linewidth="0" seqno="1" headStyle="0" lineStyle="0"/>
+	<labels mt="msg1(a)"/>
+	<extendedProperties stateflags="Activation=0;ExtendActivationUp=0;" virtualInheritance="0" diagram="EAID_40511BA7_B4F1_4edc_8143_96FBEB8D8E10" privatedata1="Synchronous" privatedata2="retval=void;params=;paramsDlg=a;" privatedata3="Call" privatedata4="0" privatedata5="SX=0;SY=-12;EX=0;EY=0;$LLB=;LLT=;LMT=CX=25:CY=26:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMB=;LRT=;LRB=;IRHS=;ILHS=;" sequence_points="PtStartX=118;PtStartY=-147;PtEndX=283;PtEndY=-147;"/>
+	<style/>
+	<xrefs/>
+	<tags/>
+</connector>
+
+<element geometry="SX=0;SY=0;EX=0;EY=0;Path=;" subject="EAID_E7D5DDBD_A205_4556_8030_28FBA0F2FE93" style=";Hidden=0;"/>

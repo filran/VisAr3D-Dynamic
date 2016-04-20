@@ -63,6 +63,15 @@ namespace Core {
             entity.Type = old.Type;
             entity.Visibility = old.Visibility;
             entity.Represents = old.Represents;
+            entity.MessageKind = old.MessageKind;
+            entity.MessageSort = old.MessageSort;
+            entity.SendEvent = old.SendEvent;
+            entity.ReceiveEvent = old.ReceiveEvent;
+            entity.Label = old.Label;
+            entity.PtStartX = old.PtStartX;
+            entity.PtStartY = old.PtStartY;
+            entity.PtEndX = old.PtEndX;
+            entity.PtEndY = old.PtEndY;
 
             return entity;
         }

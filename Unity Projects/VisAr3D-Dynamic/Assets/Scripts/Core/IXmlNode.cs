@@ -42,6 +42,19 @@ namespace Core {
         public string EA_Type { get; set; } //aggregation, association etc
         public string Aggregation { get; set; } //none, composite, shared etc
 
+        //messageKind messageSort sendEvent receiveEvent
+        public string MessageKind { get; set; }
+        public string MessageSort { get; set; }
+        public string SendEvent { get; set; }
+        public string ReceiveEvent { get; set; }
+        public string Label { get; set; }
+        //"PtStartX=118;PtStartY=-147;PtEndX=283;PtEndY=-147;" />
+        public string Sequence_Points { get; set; }
+        public float PtStartX { get; set; }
+        public float PtStartY { get; set; }
+        public float PtEndX { get; set; }
+        public float PtEndY { get; set; }
+
         public List<IXmlNode> ChildNodes { get; set; }
 
 		public IXmlNode(){
