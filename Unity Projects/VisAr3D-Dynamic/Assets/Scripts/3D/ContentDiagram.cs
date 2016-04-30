@@ -19,6 +19,8 @@ public class ContentDiagram : MonoBehaviour {
     private ClassDiagram TheClassDiagram { get; set; }
     private SequenceDiagram TheSequenceDiagram { get; set; }
 
+    private bool play = false;
+
     //Classes
     private Dictionary<Class,GameObject> Classes { get; set; } //key:class value:class like gameobject
                                                  //origin    destination
@@ -26,6 +28,7 @@ public class ContentDiagram : MonoBehaviour {
 
     //Lifelines
     private Dictionary<Lifeline , GameObject> Lifelines { get; set; }
+    private Dictionary<Method , GameObject> Methods { get; set; }
 
     private float x = 0;
     private float y = 0;
@@ -62,7 +65,17 @@ public class ContentDiagram : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        updateLineRenderer();
+        UpdateLineRenderer();
+        
+        if(play)
+        {
+
+        }        
+    }
+
+    public void Play()
+    {
+        play = !play;
     }
 
     void BuildClassDiagram(IXmlNode diagram)
@@ -114,7 +127,7 @@ public class ContentDiagram : MonoBehaviour {
         }
     }
 
-    void updateLineRenderer()
+    void UpdateLineRenderer()
     {
         foreach(KeyValuePair<LineRenderer, Dictionary<GameObject, GameObject>> l in LineRenderes)
         {
@@ -128,7 +141,6 @@ public class ContentDiagram : MonoBehaviour {
             }
         }
     }
-
 
     void BuildSequenceDiagram(IXmlNode diagram)
     {
@@ -150,14 +162,19 @@ public class ContentDiagram : MonoBehaviour {
                     Transform text = go_lifeline.transform.FindChild("lifeline_name");
                     text.GetComponent<TextMesh>().text = l.Name;
 
-                    Debug.Log("Lifeline:"+l.Name);
+                    Lifelines.Add(l,go_lifeline); //save
+
+                    //Debug.Log("Lifeline:"+l.Name);
                     //render messages
+                    Methods = new Dictionary<Method, GameObject>();
                     foreach(Method m in l.Methods)
                     {
                         GameObject go_message = (GameObject)Instantiate(Message, new Vector3(scale(l.Left), scale(m.PtStartY), 0), Quaternion.identity);
                         go_message.name = m.Name;
                         Transform text_msg = go_message.transform.FindChild("msg_name");
                         text_msg.GetComponent<TextMesh>().text = m.Name;
+
+                        Methods.Add(m, go_message); //save
 
                         go_message.transform.parent = go_lifeline.transform;
                         //Debug.Log("\t"+m.Name+"\t"+m.MessageSort+"\tStartX:"+scale(m.PtStartX)+"\tStartY"+scale(m.PtStartY));

@@ -1,0 +1,53 @@
+Mono path[0] = 'F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/VisAr3D-Dynamic/Output/VisAr3D-Dynamic_Data/Managed'
+Mono path[1] = 'F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/VisAr3D-Dynamic/Output/VisAr3D-Dynamic_Data/Mono'
+Mono config path = 'F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/VisAr3D-Dynamic/Output/VisAr3D-Dynamic_Data/Mono/etc'
+PlayerConnection initialized from F:/Documentos/Programacao/GitHub/VisAr3D-Dynamic/Unity Projects/VisAr3D-Dynamic/Output/VisAr3D-Dynamic_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55134
+Multi-casting "[IP] 146.164.35.110 [Port] 55134 [Flags] 3 [Guid] 3246709639 [EditorId] 1115460971 [Version] 1048832 [Id] WindowsPlayer(HERCULES) [Debug] 1" to [225.0.0.222:54997]...
+Waiting for connection from host on [146.164.35.110:55134]...
+PlayerConnection accepted from [146.164.35.110] handle:0x200
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56639
+PlayerConnection already initialized - listening to [146.164.35.110:55134]
+Initialize engine version: 5.2.1f1 (44735ea161b3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 720    (ID=0x1288)
+    Vendor:   NVIDIA
+    VRAM:     967 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.047 seconds
+desktop: 1280x1024 60Hz; virtual: 2560x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\System.dll (this message is harmless)
+Platform assembly: F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Output\VisAr3D-Dynamic_Data\Managed\System.Xml.dll (this message is harmless)
+ArgumentException: Encoding name 'windows-1252' not supported
+Parameter name: name
+  at System.Text.Encoding.GetEncoding (System.String name) [0x000ed] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/corlib/System.Text/Encoding.cs:718 
+  at System.Xml.XmlInputStream.Initialize (System.IO.Stream stream) [0x00265] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/System.XML/System.Xml/XmlInputStream.cs:459 
+  at System.Xml.XmlInputStream..ctor (System.IO.Stream stream) [0x00006] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/System.XML/System.Xml/XmlInputStream.cs:359 
+  at System.Xml.XmlStreamReader..ctor (System.IO.Stream input) [0x00000] in <filename unknown>:0 
+  at Mono.Xml2.XmlTextReader..ctor (System.String url, System.Xml.XmlNameTable nt) [0x00061] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/System.XML/System.Xml/XmlTextReader.cs:120 
+  at System.Xml.XmlTextReader..ctor (System.String url, System.Xml.XmlNameTable nt) [0x00006] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/System.XML/System.Xml/XmlTextReader2.cs:107 
+  at System.Xml.XmlDocument.Load (System.String filename) [0x00002] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/System.XML/System.Xml/XmlDocument.cs:697 
+  at ParserXMI.XMI..ctor (System.String url) [0x00011] in F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Assets\Scripts\ParserXMI\XMI.cs:32 
+  at Core.TheCore..ctor (System.String url) [0x00006] in F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Assets\Scripts\Core\TheCore.cs:25 
+  at ListPackages.Start () [0x00000] in F:\Documentos\Programacao\GitHub\VisAr3D-Dynamic\Unity Projects\VisAr3D-Dynamic\Assets\Scripts\3D\ListPackages.cs:13 
+ 
+(Filename: /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/corlib/System.Text/Encoding.cs Line: 718)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 20f4 -> priority: 1 
+  Thread -> id: 2abc -> priority: 1 
+Waiting for finish
