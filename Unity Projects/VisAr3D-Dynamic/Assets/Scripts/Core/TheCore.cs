@@ -34,6 +34,7 @@ namespace Core {
             AddRelationshipsToClassDiagrams();
 
             AddLifelinesToDiagrams();
+            AddMessagesToLifeline();
 
         }
 
@@ -120,6 +121,27 @@ namespace Core {
                                 //Debug.Log("Lifeline: " + l.Id + " " + l.Name);
                                 Lifeline thelifeline = new Lifeline();
                                 d.SoftwareEntities.Add(InterchangeSoftwareEntity(l,thelifeline));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void AddMessagesToLifeline()
+        {
+            foreach (Package p in Packages)
+            {
+                foreach (SequenceDiagram d in p.SequenceDiagrams)
+                {
+                    foreach (Lifeline l in d.SoftwareEntities)
+                    {
+                        foreach (IXmlNode m in TheXMI.Messages)
+                        {
+                            if (m.IdSource == l.Id)
+                            {
+                                Method method = new Method();
+                                l.AddMethod(InterchangeSoftwareEntity(m, method));
                             }
                         }
                     }

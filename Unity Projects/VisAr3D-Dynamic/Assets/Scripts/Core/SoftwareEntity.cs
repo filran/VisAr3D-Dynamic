@@ -20,14 +20,21 @@ namespace Core {
         //public Core.Method m_Method;
         //public Core.Attribute m_Attribute;
         public Dictionary<IXmlNode, IXmlNode> Relationships { get; private set; }
+        public List<IXmlNode> Methods { get; private set; }
 
 		public SoftwareEntity(){
             Relationships = new Dictionary<IXmlNode, IXmlNode>();
+            Methods = new List<IXmlNode>();
 		}
                 
         public void AddRelationshipWith(IXmlNode relationship , IXmlNode softwareentity)
         {
             Relationships.Add(relationship, softwareentity);
+        }
+
+        public void AddMethod(IXmlNode method)
+        {
+            Methods.Add(method);
         }
 
 		~SoftwareEntity(){

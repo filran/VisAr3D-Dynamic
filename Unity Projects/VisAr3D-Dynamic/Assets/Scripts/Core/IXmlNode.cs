@@ -54,6 +54,7 @@ namespace Core {
         public float PtStartY { get; set; }
         public float PtEndX { get; set; }
         public float PtEndY { get; set; }
+              
 
         public List<IXmlNode> ChildNodes { get; set; }
 

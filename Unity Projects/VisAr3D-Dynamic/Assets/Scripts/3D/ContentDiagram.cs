@@ -11,6 +11,7 @@ public class ContentDiagram : MonoBehaviour {
 
     //Sequence
     public GameObject Lifeline;
+    public GameObject Message;
 
     public string dirsourcecode;
 
@@ -131,7 +132,7 @@ public class ContentDiagram : MonoBehaviour {
 
     void BuildSequenceDiagram(IXmlNode diagram)
     {
-        Debug.Log(diagram.Type + " Diagram, Id:" + diagram.Id + ", name:" + diagram.Name);
+        //Debug.Log(diagram.Type + " Diagram, Id:" + diagram.Id + ", name:" + diagram.Name);
 
         Package package = (Package)Core.FindById(Core.Packages, diagram.IdPackage);
         if (package.Id != null)
@@ -143,17 +144,29 @@ public class ContentDiagram : MonoBehaviour {
 
                 foreach (Lifeline l in sequencediagram.SoftwareEntities)
                 {
-                    GameObject go_lifeline = (GameObject)Instantiate(Lifeline, new Vector3(scale(l.Left), 0, 0), Quaternion.identity);
+                    //render lifeline
+                    GameObject go_lifeline = (GameObject)Instantiate(Lifeline, new Vector3(scale(l.Left), scale(l.Top), 0), Quaternion.identity);
                     go_lifeline.gameObject.name = l.Name;
                     Transform text = go_lifeline.transform.FindChild("lifeline_name");
                     text.GetComponent<TextMesh>().text = l.Name;
 
-                    //go_class.gameObject.name = c.Name;
-                    //go_class.AddComponent<OpenCode>();
-                    //Transform text = go_class.transform.FindChild("classname");
-                    //text.GetComponent<TextMesh>().text = c.Name;
-                    //text.name = c.Name;
-                    //Classes.Add(c, go_class);
+                    Debug.Log("Lifeline:"+l.Name);
+                    //render messages
+                    foreach(Method m in l.Methods)
+                    {
+                        GameObject go_message = (GameObject)Instantiate(Message, new Vector3(scale(l.Left), scale(m.PtStartY), 0), Quaternion.identity);
+                        go_message.name = m.Name;
+                        Transform text_msg = go_message.transform.FindChild("msg_name");
+                        text_msg.GetComponent<TextMesh>().text = m.Name;
+
+                        go_message.transform.parent = go_lifeline.transform;
+                        //Debug.Log("\t"+m.Name+"\t"+m.MessageSort+"\tStartX:"+scale(m.PtStartX)+"\tStartY"+scale(m.PtStartY));
+                    }
+
+                    //render vertical line
+                    Transform verticalline = go_lifeline.transform.FindChild("line");
+                    verticalline.localScale = new Vector3(verticalline.localScale.x, scale(l.Bottom), verticalline.localScale.z);
+                    verticalline.position = new Vector3(verticalline.position.x, scale(l.Bottom*-0.49f), verticalline.position.z);
                 }
             }
         }

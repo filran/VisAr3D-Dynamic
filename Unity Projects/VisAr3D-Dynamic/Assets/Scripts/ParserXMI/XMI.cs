@@ -42,6 +42,11 @@ namespace ParserXMI {
 
                 ReadNodes(ParserXMI.DocumentElement);
                 FilterPackages();
+
+                //test
+                foreach(IXmlNode m in Messages){
+                    //Debug.Log("Name:" + m.Name + "\tLabel:" + m.Label + "\tId:" + m.Id + "\tSource:" + m.IdSource + "\tTarget:" + m.IdTarget);
+                }
             }
         }
 
@@ -79,6 +84,7 @@ namespace ParserXMI {
                 BuildLifeline(n);
                 BuildLifelineElement(n);
                 BuildMessages(n);
+                BuildSourceAndTargetLifelineToMessage(n);
 
                 ReadNodes(n);
             }
@@ -173,6 +179,7 @@ namespace ParserXMI {
 
                     case "sequence_points":
                         n.Sequence_Points = att.Value;
+                        BreakAttribute(att.Value, n);
                         break;
                 }
             }
@@ -483,6 +490,43 @@ namespace ParserXMI {
                 IXmlNode n = new Method();
                 AddAttributes(node, n);
                 Messages.Add(n);
+            }
+        }
+
+        private void BuildSourceAndTargetLifelineToMessage(XmlNode node)
+        {
+            if(node.Name == "connector")
+            {
+                foreach(IXmlNode m in Messages)
+                {
+                    if(node.Attributes["xmi:idref"].Value == m.Id)
+                    {
+                        foreach(XmlNode n in node.ChildNodes)
+                        {
+                            if (n.Name == "source" && n.ChildNodes[0].Attributes["type"].Value == "Sequence")
+                            {
+                                m.IdSource = n.Attributes["xmi:idref"].Value;
+                                //Debug.Log("IdSource: " + m.IdSource);
+                            }
+
+                            if(n.Name == "target" && n.ChildNodes[0].Attributes["type"].Value == "Sequence")
+                            {
+                                m.IdTarget = n.Attributes["xmi:idref"].Value;
+                                //Debug.Log("IdTarget: " + m.IdTarget);
+                            }
+
+                            if(n.Name == "labels")
+                            {
+                                AddAttributes(n,m);
+                            }
+
+                            if(n.Name == "extendedProperties")
+                            {
+                                AddAttributes(n,m);
+                            }
+                        }
+                    }
+                }
             }
         }
 
