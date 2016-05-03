@@ -524,6 +524,11 @@ namespace ParserXMI {
                             {
                                 AddAttributes(n,m);
                             }
+
+                            if(n.Name == "appearance")
+                            {
+                                AddAttributes(n,m);
+                            }
                         }
                     }
                 }

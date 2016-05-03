@@ -15,10 +15,13 @@ using System.IO;
 
 using Core;
 namespace Core {
-	public class SequenceDiagram : Diagram {
+    public class SequenceDiagram : Diagram {
 
-		public SequenceDiagram(){
+        public int CountLifelines { get; set; }
+        public int CountMessages { get; set; }
 
+        public SequenceDiagram(){
+            //CountLifelines = SoftwareEntities.Count;
 		}
 
 		~SequenceDiagram(){

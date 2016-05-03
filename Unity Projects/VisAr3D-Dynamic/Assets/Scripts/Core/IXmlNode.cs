@@ -80,6 +80,19 @@ namespace Core {
             return r;
         }
 
+        //public IXmlNode FindById(List<IXmlNode> list , int seqno)
+        //{
+        //    foreach(IXmlNode node in list)
+        //    {
+        //        if(node.Seqno == seqno)
+        //        {
+
+        //        }
+        //    }
+
+        //    return new SequenceDiagram();
+        //}
+
 		~IXmlNode(){
 
 		}

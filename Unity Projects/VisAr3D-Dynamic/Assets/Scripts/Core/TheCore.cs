@@ -136,12 +136,14 @@ namespace Core {
                 {
                     foreach (Lifeline l in d.SoftwareEntities)
                     {
+                        d.CountLifelines++; //amount life
                         foreach (IXmlNode m in TheXMI.Messages)
                         {
                             if (m.IdSource == l.Id)
                             {
                                 Method method = new Method();
                                 l.AddMethod(InterchangeSoftwareEntity(m, method));
+                                d.CountMessages++; //amount messages
                             }
                         }
                     }
@@ -206,7 +208,7 @@ namespace Core {
                             if(c.Id == r.IdSource)
                             {
                                 s += "\t\t\t\t"+r.EA_Type+" - "+r.Aggregation+" - "+r.Id+"\n";
-                                s += "\t\t\t\t\tTarget: " + r.IdTarget + " - " + r.FindById(d.SoftwareEntities, r.IdTarget).Name + "\n\n";
+                                //s += "\t\t\t\t\tTarget: " + r.IdTarget + " - " + r.FindById(d.SoftwareEntities, r.IdTarget).Name + "\n\n";
 
                                 switch(r.EA_Type)
                                 {
