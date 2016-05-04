@@ -106,7 +106,7 @@ public class ContentDiagram : MonoBehaviour
                         AnimationMessage(m.Key , m.Value);
                         tmp = Slider.GetComponent<Slider>().value;
 
-                        Debug.Log(m.Key.Label+"\tDist:"+scale(m.Key.Dist)*0.25f+"\tLeft:");
+                        //Debug.Log(m.Key.Label+"\tDist:"+scale(m.Key.Dist)*0.25f+"\tLeft:");
                     }
 
                     //m.Value.GetComponent<Renderer>().material.DOFade(1, 1);

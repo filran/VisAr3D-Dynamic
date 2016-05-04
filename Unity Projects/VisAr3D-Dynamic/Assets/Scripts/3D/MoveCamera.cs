@@ -3,12 +3,16 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MoveCamera : MonoBehaviour
 {
     //
     // VARIABLES
     //
+
+    public GameObject Slider;
+    private bool slider = false;
 
     public float turnSpeed = 2.0f;      // Speed of camera turning when mouse moves in along an axis
     public float panSpeed = 2.0f;       // Speed of the camera when being panned
@@ -22,6 +26,11 @@ public class MoveCamera : MonoBehaviour
     //
     // UPDATE
     //
+
+    void Start()
+    {
+
+    }
 
     void Update()
     {
@@ -46,11 +55,20 @@ public class MoveCamera : MonoBehaviour
 
 
         // Get the left mouse button
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) )
         {
-            // Get mouse origin
+            slider = false;
             mouseOrigin = Input.mousePosition;
-            isRotating = true;
+
+            Slider.GetComponent<Slider>().onValueChanged.AddListener(delegate {
+                slider = true;
+                isRotating = false;
+            });
+
+            if(!slider)
+            {
+                isRotating = true;
+            }
         }
 
         // Get the right mouse button
