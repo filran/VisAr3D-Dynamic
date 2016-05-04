@@ -116,8 +116,34 @@ public class ContentDiagram : MonoBehaviour
 
     void AnimationMessage(string direction, Method method , GameObject go_method )
     {
+        GameObject lifeSource = new GameObject();
+        GameObject lifeTarget = new GameObject();
+
+        foreach (KeyValuePair<Lifeline,GameObject> l in Lifelines)
+        {
+            if(method.IdSource == l.Key.Id)
+            {
+                lifeSource = l.Value;
+            }
+
+            if (method.IdTarget == l.Key.Id)
+            {
+                lifeTarget = l.Value;
+            }
+        }
+
         if(direction == "left")
         {
+            if(Slider.GetComponent<Slider>().value == 0)
+            {
+                foreach (KeyValuePair<Lifeline,GameObject> l in Lifelines)
+                {
+                    l.Value.GetComponent<Renderer>().material.DOFade(0, timealpha);
+                    l.Value.transform.FindChild("lifeline_name").GetComponent<Renderer>().material.DOFade(0, timealpha);
+                    l.Value.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(0, timealpha);
+                }
+            }
+
             go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(0, timealpha);
             go_method.transform.FindChild("line").DOScaleX(0.2f, timealpha);
             float localmovex = 0;
@@ -139,6 +165,13 @@ public class ContentDiagram : MonoBehaviour
             //    go_method.transform.Find("line").localScale = new Vector3(0.2f, go_method.transform.Find("line").localScale.y, go_method.transform.Find("line").localScale.z);
             //    go_method.transform.Find("line").localPosition = new Vector3(scale(method.Left), go_method.transform.Find("line").localPosition.y, go_method.transform.Find("line").localPosition.z);
             //}
+            lifeSource.GetComponent<Renderer>().material.DOFade(1, timealpha);
+            lifeSource.transform.FindChild("lifeline_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
+            lifeSource.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
+            lifeTarget.GetComponent<Renderer>().material.DOFade(1, timealpha);
+            lifeTarget.transform.FindChild("lifeline_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
+            lifeTarget.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
+
             go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
             go_method.transform.FindChild("line").DOScaleX(scale(method.Dist), timealpha);
             float localmovex = 0;
@@ -299,9 +332,9 @@ public class ContentDiagram : MonoBehaviour
                     verticalline.position = new Vector3(verticalline.position.x, scale(l.Bottom * -0.49f), verticalline.position.z);
 
                     //fades
-                    //go_lifeline.GetComponent<Renderer>().material.DOFade(0, 0);
-                    //text.GetComponent<Renderer>().material.DOFade(0, 0);
-                    //verticalline.GetComponent<Renderer>().material.DOFade(0, 0);
+                    go_lifeline.GetComponent<Renderer>().material.DOFade(0, 0);
+                    text.GetComponent<Renderer>().material.DOFade(0, 0);
+                    verticalline.GetComponent<Renderer>().material.DOFade(0, 0);
 
                     Lifelines.Add(l, go_lifeline); //save
 
