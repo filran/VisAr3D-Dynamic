@@ -52,17 +52,11 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -95,6 +89,7 @@
     <Compile Include="Assets\Scripts\3D\ContentDiagram.cs" />
     <Compile Include="Assets\Scripts\3D\ListDiagrams.cs" />
     <Compile Include="Assets\Scripts\3D\ListPackages.cs" />
+    <Compile Include="Assets\Scripts\3D\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\3D\OpenCode.cs" />
     <Compile Include="Assets\Scripts\Composite\Child.cs" />
     <Compile Include="Assets\Scripts\Composite\Client.cs" />

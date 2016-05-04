@@ -8,7 +8,6 @@ using Core;
 
 public class ContentDiagram : MonoBehaviour
 {
-
     //Class
     public GameObject Class;
     public Material lineMaterial;
@@ -169,6 +168,8 @@ public class ContentDiagram : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //movementCamera();
+
         UpdateLineRenderer();
 
         //if true, render!
@@ -373,4 +374,6 @@ public class ContentDiagram : MonoBehaviour
     {
         return n * 0.19f * 0.1f;
     }
+
 }
+
