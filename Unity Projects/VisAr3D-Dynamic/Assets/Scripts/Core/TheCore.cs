@@ -35,7 +35,6 @@ namespace Core {
 
             AddLifelinesToDiagrams();
             AddMessagesToLifeline();
-
         }
 
         //TROCA DE VALROES ENTRE AS CLASSES
@@ -73,6 +72,8 @@ namespace Core {
             entity.PtStartY = old.PtStartY;
             entity.PtEndX = old.PtEndX;
             entity.PtEndY = old.PtEndY;
+            entity.Dist = old.Dist;
+            entity.Direction = old.Direction;
 
             return entity;
         }
@@ -141,6 +142,23 @@ namespace Core {
                         {
                             if (m.IdSource == l.Id)
                             {
+                                foreach(Lifeline ll in d.SoftwareEntities)
+                                {
+                                    if(m.IdTarget == ll.Id)
+                                    {
+                                        if(ll.Left > l.Left)
+                                        {
+                                            m.Dist = ll.Left - l.Left;
+                                            m.Direction = "right";
+                                        }
+                                        else
+                                        {
+                                            m.Dist = l.Left - ll.Left;
+                                            m.Direction = "left";
+                                        }
+                                    }
+                                }
+
                                 Method method = new Method();
                                 l.AddMethod(InterchangeSoftwareEntity(m, method));
                                 d.CountMessages++; //amount messages

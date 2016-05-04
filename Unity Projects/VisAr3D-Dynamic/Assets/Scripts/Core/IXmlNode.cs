@@ -54,6 +54,9 @@ namespace Core {
         public float PtStartY { get; set; }
         public float PtEndX { get; set; }
         public float PtEndY { get; set; }
+
+        public float Dist { get; set; } //message's distance between lifelines
+        public string Direction { get; set; } //To Message: left or right
               
 
         public List<IXmlNode> ChildNodes { get; set; }

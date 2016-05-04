@@ -33,6 +33,7 @@ public class ContentDiagram : MonoBehaviour
     private int maximum = 0; //Amount of messages in sequence diagram
     private float tmp = 0;
     private string direction = "right";
+    private float timealpha = 0.5f;
 
     //Classes
     private Dictionary<Class, GameObject> Classes { get; set; } //key:class value:class like gameobject
@@ -95,23 +96,26 @@ public class ContentDiagram : MonoBehaviour
 
                     if (direction == "left")
                     {
-                        m.Value.GetComponent<Renderer>().material.DOFade(0, 1);
-                        m.Value.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(0, 1);
+                        m.Value.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(0, timealpha);
+                        m.Value.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(0, timealpha);
                         tmp = Slider.GetComponent<Slider>().value;
                     }
                     else
                     {
-                        m.Value.GetComponent<Renderer>().material.DOFade(1, 1);
-                        m.Value.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, 1);
+                        //m.Value.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
+                        //m.Value.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
+                        AnimationMessage(m.Key , m.Value);
                         tmp = Slider.GetComponent<Slider>().value;
+
+                        Debug.Log(m.Key.Label+"\tDist:"+scale(m.Key.Dist)*0.25f+"\tLeft:");
                     }
 
                     //m.Value.GetComponent<Renderer>().material.DOFade(1, 1);
                     //Debug.Log(m.Key.Label +"\tAlpha:" + m.Value.GetComponent<Renderer>().material.color.a );
                 }
             }
-            r = "direction:" + direction + "\ttmp:" + tmp + "\tcurrent:" + current + "\tvalue:" + Slider.GetComponent<Slider>().value;
-            Debug.Log(r);
+            //r = "direction:" + direction + "\ttmp:" + tmp + "\tcurrent:" + current + "\tvalue:" + Slider.GetComponent<Slider>().value;
+            //Debug.Log(r);
         });
 
         //Debug.Log("IdDiagram: "+PlayerPrefs.GetString("IdDiagram"));
@@ -136,6 +140,29 @@ public class ContentDiagram : MonoBehaviour
                     break;
             }
         }
+
+    }
+
+    void AnimationMessage( Method method , GameObject go_method )
+    {
+        //go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
+        //go_method.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
+
+        go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
+        go_method.transform.FindChild("line").DOScaleX(scale(method.Dist), timealpha);
+
+        float localmovex = 0;
+        if(method.Direction == "left")
+        {
+            localmovex = (scale(method.Dist) / 2) * -1;
+        }
+        else
+        {
+            localmovex = scale(method.Dist) / 2;
+        }
+
+        go_method.transform.FindChild("line").DOLocalMoveX(localmovex, timealpha);
+        go_method.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
 
     }
 
@@ -290,15 +317,28 @@ public class ContentDiagram : MonoBehaviour
                     //render messages
                     foreach (Method m in l.Methods)
                     {
+                        //float msg_posX = scale(l.Left);
+
+                        //if (m.Direction == "right")
+                        //{
+                        //    msg_posX = scale(l.Left) + scale(m.Dist) / 2;
+                        //}
+                        //else if (m.Direction == "left")
+                        //{
+                        //    msg_posX = scale(l.Left) - scale(m.Dist) / 2;
+                        //}
+
                         GameObject go_message = (GameObject)Instantiate(Message, new Vector3(scale(l.Left), scale(m.PtStartY), 0), Quaternion.identity);
                         go_message.name = m.Name;
+                        //go_message.transform.FindChild("line").localScale = new Vector3(scale(m.Dist), go_message.transform.FindChild("line").localScale.y, go_message.transform.FindChild("line").localScale.z);
+
                         Transform text_msg = go_message.transform.FindChild("msg_name");
                         text_msg.GetComponent<TextMesh>().text = m.Name +"\n"+m.MessageSort;
 
                         //Debug.Log("\t"+m.Seqno+" "+m.Name +"\t"+m.Label);
 
                         //fades
-                        go_message.GetComponent<Renderer>().material.DOFade(0, 0);
+                        go_message.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(0, 0);
                         text_msg.GetComponent<Renderer>().material.DOFade(0, 0);
 
                         Methods.Add(m, go_message); //save
