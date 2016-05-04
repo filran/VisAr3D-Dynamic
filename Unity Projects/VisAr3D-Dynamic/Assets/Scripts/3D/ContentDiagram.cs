@@ -56,69 +56,6 @@ public class ContentDiagram : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
 
-        //TEST --------------------------------------------------------------------------
-        
-        //END TEST --------------------------------------------------------------------------
-
-
-        //UI-------------------
-        //Play Button 
-        Bt_PlayPause.GetComponent<Button>().onClick.AddListener(delegate ()
-        {
-            Play();
-        });
-
-        //When Slider is changed
-        Slider.GetComponent<Slider>().onValueChanged.AddListener(delegate {
-            string r;
-            current = Slider.GetComponent<Slider>().value;
-
-            r = current.ToString();
-            //Debug.Log("Direction: "+ Slider.GetComponent<Slider>().direction.ToString());
-            //Debug.Log("Current:"+current+"\tValue:"+ Slider.GetComponent<Slider>().value);
-
-            if( current < tmp)
-            {
-                direction = "left";
-                ++current;
-            }
-            else if( current > tmp )
-            {
-                direction = "right";
-            }
-
-            foreach (KeyValuePair<Method, GameObject> m in Methods)
-            {
-                if (current == float.Parse(m.Key.Seqno, CultureInfo.InvariantCulture.NumberFormat))
-                {
-                    //r += " seq:"+ m.Key.Seqno+"\tname:"+ m.Key.Name+"\tlabel:"+ m.Key.Label+"\tkind"+ m.Key.MessageSort;
-
-                    if (direction == "left")
-                    {
-                        m.Value.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(0, timealpha);
-                        m.Value.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(0, timealpha);
-                        tmp = Slider.GetComponent<Slider>().value;
-                    }
-                    else
-                    {
-                        //m.Value.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
-                        //m.Value.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
-                        AnimationMessage(m.Key , m.Value);
-                        tmp = Slider.GetComponent<Slider>().value;
-
-                        //Debug.Log(m.Key.Label+"\tDist:"+scale(m.Key.Dist)*0.25f+"\tLeft:");
-                    }
-
-                    //m.Value.GetComponent<Renderer>().material.DOFade(1, 1);
-                    //Debug.Log(m.Key.Label +"\tAlpha:" + m.Value.GetComponent<Renderer>().material.color.a );
-                }
-            }
-            //r = "direction:" + direction + "\ttmp:" + tmp + "\tcurrent:" + current + "\tvalue:" + Slider.GetComponent<Slider>().value;
-            //Debug.Log(r);
-        });
-
-        //Debug.Log("IdDiagram: "+PlayerPrefs.GetString("IdDiagram"));
-
         Core = new TheCore(PlayerPrefs.GetString("XMIFile"));
 
         IXmlNode diagram = Core.FindById(Core.AllDiagrams, PlayerPrefs.GetString("IdDiagram"));
@@ -140,28 +77,82 @@ public class ContentDiagram : MonoBehaviour
             }
         }
 
+        //UI-------------------
+        //Play Button 
+        Bt_PlayPause.GetComponent<Button>().onClick.AddListener(delegate ()
+        {
+            Play();
+        });
+
+        //When Slider is changed
+        Slider.GetComponent<Slider>().onValueChanged.AddListener(delegate {
+            string r;
+            current = Slider.GetComponent<Slider>().value;
+
+            r = current.ToString();
+
+            if( current < tmp)
+            {
+                direction = "left";
+                ++current;
+            }
+            else if( current > tmp )
+            {
+                direction = "right";
+            }
+
+            foreach (KeyValuePair<Method, GameObject> m in Methods)
+            {
+                if (current == float.Parse(m.Key.Seqno, CultureInfo.InvariantCulture.NumberFormat))
+                {
+                    tmp = Slider.GetComponent<Slider>().value;
+                    AnimationMessage(direction, m.Key, m.Value);
+                }
+            }
+        });
+
+
     }
 
-    void AnimationMessage( Method method , GameObject go_method )
+    void AnimationMessage(string direction, Method method , GameObject go_method )
     {
-        //go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
-        //go_method.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
-
-        go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
-        go_method.transform.FindChild("line").DOScaleX(scale(method.Dist), timealpha);
-
-        float localmovex = 0;
-        if(method.Direction == "left")
+        if(direction == "left")
         {
-            localmovex = (scale(method.Dist) / 2) * -1;
+            go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(0, timealpha);
+            go_method.transform.FindChild("line").DOScaleX(0.2f, timealpha);
+            float localmovex = 0;
+            if (method.Direction == "left")
+            {
+                localmovex = (scale(method.Left) / 2);
+            }
+            else
+            {
+                localmovex = -scale(method.Left) / 2;
+            }
+            go_method.transform.FindChild("line").DOLocalMoveX(localmovex, timealpha);
+            go_method.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(0, timealpha);
         }
         else
         {
-            localmovex = scale(method.Dist) / 2;
+            //if (go_method.transform.Find("line").localScale.x > 0.2f)
+            //{
+            //    go_method.transform.Find("line").localScale = new Vector3(0.2f, go_method.transform.Find("line").localScale.y, go_method.transform.Find("line").localScale.z);
+            //    go_method.transform.Find("line").localPosition = new Vector3(scale(method.Left), go_method.transform.Find("line").localPosition.y, go_method.transform.Find("line").localPosition.z);
+            //}
+            go_method.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(1, timealpha);
+            go_method.transform.FindChild("line").DOScaleX(scale(method.Dist), timealpha);
+            float localmovex = 0;
+            if (method.Direction == "left")
+            {
+                localmovex = -(scale(method.Dist) / 2);
+            }
+            else
+            {
+                localmovex = scale(method.Dist) / 2;
+            }
+            go_method.transform.FindChild("line").DOLocalMoveX(localmovex, timealpha);
+            go_method.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
         }
-
-        go_method.transform.FindChild("line").DOLocalMoveX(localmovex, timealpha);
-        go_method.transform.FindChild("msg_name").GetComponent<Renderer>().material.DOFade(1, timealpha);
 
     }
 
@@ -171,6 +162,11 @@ public class ContentDiagram : MonoBehaviour
         //movementCamera();
 
         UpdateLineRenderer();
+
+        if(Input.GetKey(KeyCode.Backspace))
+        {
+            Play();
+        }
 
         //if true, render!
         if (play)
@@ -195,11 +191,6 @@ public class ContentDiagram : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            
-        }
-
     }
 
     void Play()
@@ -318,25 +309,22 @@ public class ContentDiagram : MonoBehaviour
                     //render messages
                     foreach (Method m in l.Methods)
                     {
-                        //float msg_posX = scale(l.Left);
-
-                        //if (m.Direction == "right")
-                        //{
-                        //    msg_posX = scale(l.Left) + scale(m.Dist) / 2;
-                        //}
-                        //else if (m.Direction == "left")
-                        //{
-                        //    msg_posX = scale(l.Left) - scale(m.Dist) / 2;
-                        //}
-
                         GameObject go_message = (GameObject)Instantiate(Message, new Vector3(scale(l.Left), scale(m.PtStartY), 0), Quaternion.identity);
                         go_message.name = m.Name;
                         //go_message.transform.FindChild("line").localScale = new Vector3(scale(m.Dist), go_message.transform.FindChild("line").localScale.y, go_message.transform.FindChild("line").localScale.z);
 
                         Transform text_msg = go_message.transform.FindChild("msg_name");
-                        text_msg.GetComponent<TextMesh>().text = m.Name +"\n"+m.MessageSort;
-
-                        //Debug.Log("\t"+m.Seqno+" "+m.Name +"\t"+m.Label);
+                        float text_msg_posX;
+                        if (m.Direction == "left")
+                        {
+                            text_msg_posX = -scale(m.Dist) / 2;
+                        }
+                        else
+                        {
+                            text_msg_posX = scale(m.Dist) / 2;
+                        }
+                        text_msg.localPosition = new Vector3(text_msg_posX, text_msg.localPosition.y, text_msg.localPosition.z);
+                        text_msg.GetComponent<TextMesh>().text = m.Name;
 
                         //fades
                         go_message.transform.FindChild("line").GetComponent<Renderer>().material.DOFade(0, 0);
@@ -354,7 +342,6 @@ public class ContentDiagram : MonoBehaviour
             }
         }
     }
-
 
     GameObject FindClasses(IXmlNode c)
     {

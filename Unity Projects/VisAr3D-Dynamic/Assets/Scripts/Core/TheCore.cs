@@ -160,6 +160,7 @@ namespace Core {
                                 }
 
                                 Method method = new Method();
+                                method.Left = l.Left;
                                 l.AddMethod(InterchangeSoftwareEntity(m, method));
                                 d.CountMessages++; //amount messages
                             }
